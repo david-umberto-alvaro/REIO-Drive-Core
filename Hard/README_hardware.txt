@@ -2,9 +2,9 @@
 REIO-DRIVE CORE v1.0 — HARDWARE RTL NETLIST SPECIFICATIONS
 ======================================================================
 
-The complete VHDL source code (reio_drive_hardware_premium.vhd) and 
+The complete VHDL source code and 
 the unconstrained RTL architecture are protected under a commercial, 
-non-exclusive license. 
+non-exclusive license.
 
 To prevent unauthorized reverse-engineering and protect our Intellectual 
 Property, the raw source code is kept offline and is NOT hosted publicly 
