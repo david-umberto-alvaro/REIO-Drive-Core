@@ -44,6 +44,8 @@ All source codes, compiled binaries, and production RTL netlists are proprietary
 Copyright (c) 2026 David Umberto Alvaro. All rights reserved.  
 **PROPRIETARY AND CONFIDENTIAL.** No open-source license is granted. Any unauthorized distribution or reverse engineering is strictly prohibited.
 
+---
+
 # 🛡️ REIO — Cœurs IP de sécurité et de performance haute vitesse
 
 Bienvenue dans le dépôt officiel de l'architecture **REIO**. Ce dépôt héberge des modules matériels et logiciels propriétaires à ultra-faible latence, conçus pour les infrastructures critiques.
