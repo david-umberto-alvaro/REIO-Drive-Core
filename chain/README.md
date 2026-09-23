@@ -11,6 +11,8 @@ This directory contains the behavioral specifications for **REIO-Chain Core Bloc
 * **Slice LUTs:** 6 used (Minimal hardware footprint)
 * **Slice Registers:** 4 Registers (Synchronous sampling path)
 * **DSP / Block RAM:** 0% (Pure sequential logic, no block RAM latency overhead)
+* 
+![Behavioral Verification Waveform](simulation_proof.png)
 
 ## 💼 Evaluation Protocol
 The production VHDL source files and pre-compiled Out-of-Context Netlists (`.dcp`) are proprietary. Evaluation binary blocks are distributed exclusively under flat-fee **Site License** frameworks to sandbox environments upon validation of a unilateral Non-Disclosure Agreement (NDA).
