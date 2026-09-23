@@ -16,7 +16,6 @@ This directory contains the behavioral specifications for **REIO-Chain Core Bloc
 
 ## 🔌 Hardware Interface & Pin Specifications
 
-
 ## 💻 Target Deployment Environments
 
 The synthesized netlist is fully portable and optimized for high-density bourses colocation architectures, targeting modern financial acceleration hardware:
@@ -26,6 +25,8 @@ The synthesized netlist is fully portable and optimized for high-density bourses
 
 ## 💼 Evaluation Protocol
 The production VHDL source files and pre-compiled Out-of-Context Netlists (`.dcp`) are proprietary. Evaluation binary blocks are distributed exclusively under flat-fee **Site License** frameworks to sandbox environments upon validation of a unilateral Non-Disclosure Agreement (NDA).
+
+---
 
 # ⚡ Division REIO-Chain — Arbitre HFT à latence ultra-faible
 
