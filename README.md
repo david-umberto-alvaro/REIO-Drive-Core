@@ -2,7 +2,7 @@
 This repository contains the official implementation of the REIO-Drive Core v1.0 safety mitigation module, a hybrid high-velocity hardware/software solution designed to intercept and isolate in-transit data corruption or malicious fault injections (e.g., 0x7F sabotage byte) in autonomous vehicles, drones, and critical industrial systems.
 ------------------------------
 ## 📈 Technical Proven Performance
-The architecture has been fully compiled, synthesized, and validated under Xilinx Vivado 2020.1 targeting an AMD/Xilinx Artix-7 FPGA (xc7a35tcsg324-1).
+The architecture has been fully compiled, synthesized, and validated under Xilinx Vivado v.2026.1 targeting an AMD/Xilinx Artix-7 FPGA (xc7a35tcsg324-1).
 ## 1. Hardware Resource Utilization Summary (Report Utilization)
 
 * Slice LUTs: 6 used (out of 20,800) $\rightarrow$ 0.03% silicon footprint.
