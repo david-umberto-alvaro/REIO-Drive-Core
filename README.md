@@ -34,12 +34,13 @@ This IP Core is distributed under commercial non-exclusive licensing models for 
 
 For compliance documents, custom port mappings, or integration audits in the Benelux/Europe area, please contact the lead systems architect.
 
-## ⚖️ Legal & Licensing
+## 💼 B2B Licensing & Engineering Services
 
-Copyright (c) 2026 David Umberto Alvaro. All rights reserved.
+This IP Core and Software Crate are distributed exclusively under commercial, non-exclusive end-user license agreements (EULA) for automotive, robotics, and aerospace technology integrators.
 
-This software and hardware IP core are PROPRIETARY and CONFIDENTIAL. 
-No open-source license is granted. 
+*   **Commercial Evaluation Package:** Black-box compiled binary (.a/.lib) and hardware Netlist (.dcp) + 30 days time-bombed evaluation window for SIL/HIL testing.
+*   **Production Project License:** Deployment-ready secure binaries and Netlists for commercial mass production (licensed per active project/product line).
+*   **Annual Maintenance & Support:** Technical SLA upgrades, compliance audit assistance, and synthesis integration support for newer Xilinx Vivado toolchains.
 
-Any unauthorized copying, modification, or distribution of these files 
-without an explicit, signed Commercial License Agreement is strictly prohibited.
+For commercial inquiries, licensing quotes, or to request a Non-Disclosure Agreement (NDA) for technical evaluation, please contact the lead systems architect directly via private message.
+
