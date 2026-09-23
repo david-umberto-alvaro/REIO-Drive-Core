@@ -21,5 +21,3 @@ reio_status_t verifier_flux_reio(const uint8_t *buffer_ptr, size_t taille);
 #ifdef __cplusplus
 }
 #endif
-
-#endif // REIO_DRIVE_H
