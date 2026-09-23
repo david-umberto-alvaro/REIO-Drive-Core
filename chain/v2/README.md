@@ -13,6 +13,8 @@ Our verified routed placement architecture reports the minimal structural footpr
 - **Slice Registers:** 42 Used (Configured as synchronous Flip-Flops) — Multi-channel sequential architecture.
 - **Clock Tree:** 100% routed through a single `BUFGCTRL` primitive in the high-speed **X0Y0 region**, guaranteeing **strictly 0.000 ns of temporal jitter**.
 
+- ![Behavioral Verification Waveform](simulation_premium_proof.png)
+
 ## ⚡ Latency & Timing Summary
 - **Nominal Lab Testbench (100 MHz):** 10.0 ns fixed latency.
 - **Target Production Acceleration (400 MHz):** **2.5 ns constant hardware latency** (Exactly 1 deterministic clock cycle execution).
