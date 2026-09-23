@@ -11,8 +11,9 @@ Welcome to the official repository of the **REIO** architecture. This repository
 This division provides hardware-only wire-speed frame arbitration for High-Frequency Trading pipelines.
 
 * **HARDWARE ENGINE (RTL):**
-  - **Engine:** Strict Register-Transfer Level combinatorial logic (**VHDL/Verilog**).
-  - **Performance:** Bounded to **1 deterministic clock cycle** (2.5 ns latency on 400 MHz SmartNIC targets).
+  - **Engine:** Strict Register-Transfer Level combinatorial logic (VHDL/Verilog).
+  - **Performance:** Bounded to exactly **1 deterministic clock cycle** (2.5 ns latency on 400 MHz SmartNIC targets, 10 ns on 100 MHz evaluation boards).
+  - **Resources:** Ultra-optimized footprint consuming only **2 Slice LUTs** and **1 Slice Register**.
   - **Overhead:** **0% CPU Overhead** and zero software layers, eliminating 100% of OS jitter vectors.
 
 ### 🤖 2. REIO-Drive Division (`/drive`) — Automotive & Robotics
@@ -54,14 +55,15 @@ Bienvenue dans le dépôt officiel de l'architecture **REIO**. Ce dépôt héber
 
 ## 🗂️ Divisions technologiques
 
-### ⚡ 1. Division REIO-Chain (`/chain`) — HFT (Trading Haute Fréquence) à ultra-faible latence
+### ⚡ 1. Division REIO-Chain (`/chain`) — HFT à latence ultra-faible
 
-Cette division fournit une arbitration de trames matérielle (sans intervention logicielle) à vitesse filaire (*wire-speed*) pour les chaînes de traitement de trading haute fréquence.
+Cette division fournit une fonction d'arbitrage de trames matérielle (purement *hardware*) opérant à la vitesse du lien (*wire-speed*) pour les chaînes de traitement de trading haute fréquence (HFT).
 
 * **MOTEUR MATÉRIEL (RTL) :**
-- **Moteur :** Logique combinatoire stricte au niveau RTL (Register-Transfer Level) (**VHDL/Verilog**). 
-- **Performance :** Bornée à **1 cycle d'horloge déterministe** (latence de 2,5 ns sur cibles SmartNIC à 400 MHz). 
-- **Surcharge :** **0 % de surcharge CPU** et aucune couche logicielle, éliminant 100 % des vecteurs de gigue (*jitter*) liés au système d'exploitation.
+  - **Moteur :** Logique combinatoire stricte au niveau transfert de registres (RTL) (VHDL/Verilog).
+  - **Performance :** Limitée à exactement **1 cycle d'horloge déterministe** (latence de 2,5 ns sur des cibles SmartNIC à 400 MHz, 10 ns sur des cartes d'évaluation à 100 MHz).
+  - **Ressources :** Empreinte ultra-optimisée consommant seulement **2 LUTs de Slice** et **1 registre de Slice**.
+  - **Surcharge :** **0 % de surcharge CPU** et aucune couche logicielle, éliminant 100 % des vecteurs de gigue (*jitter*) liés au système d'exploitation.
 
 ### 🤖 2. Division REIO-Drive (`/drive`) — Automobile et Robotique
 
