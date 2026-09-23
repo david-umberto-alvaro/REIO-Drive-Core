@@ -20,10 +20,8 @@ The architecture has been fully compiled, synthesized, and validated under Xilin
 ------------------------------
 ## 📦 Repository Structure
 
-* 📁 /software : Rust Bare-Metal Crate (#[no_std]) for surgical C-code embedding.
-* 📁 /hardware : Premium VHDL RTL Architecture (reio_drive_hardware.vhd).
-* 📁 /constraints : Unified Xilinx Design Constraints File (reio_constraints.xdc).
-* 📁 /docs : Formal Technical Datasheet, Whitepaper, and synthesized utilization reports.
+*   📁 `/soft` : Clean C header (`reio_drive.h`) exposing the secure Rust bare-metal FFI interface.
+*   📁 `/Hard` : Official Xilinx Vivado Synthesis report proving the 6 LUTs / 4 Registers footprint.
 
 ------------------------------
 ## 💼 B2B Licensing & Engineering Services
