@@ -1,4 +1,4 @@
-# ⚡ REIO-Chain Division — Ultra-Low Latency HFT Arbitrator
+# ⚡ REIO-Chain — Ultra-Low Latency HFT Arbitrator
 
 This directory contains the behavioral specifications for **REIO-Chain Core Block SPU-102**, an elite hardware-only synchronous frame arbitrator tailored for High-Frequency Trading (HFT) execution pipelines and wire-speed colocation infrastructures.
 
@@ -28,7 +28,7 @@ The production VHDL source files and pre-compiled Out-of-Context Netlists (`.dcp
 
 ---
 
-# ⚡ Division REIO-Chain — Arbitre HFT à latence ultra-faible
+# ⚡ REIO-Chain — Arbitre HFT à latence ultra-faible
 
 Ce répertoire contient les spécifications comportementales du **REIO-Chain Core Block SPU-102**, un arbitre de trames synchrone matériel de haute performance, conçu pour les chaînes d'exécution de trading haute fréquence (HFT) et les infrastructures de colocation opérant à la vitesse du lien (*wire-speed*).
 
