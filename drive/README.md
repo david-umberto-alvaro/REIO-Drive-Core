@@ -29,6 +29,7 @@ The hardware implementation has been fully compiled, synthesized, and validated 
 *   **Entropy Filtering & Anti-Glitch:** The module incorporates a hardware-based threat pattern detection algorithm (*Pattern Threat Mapping*). To prevent false positives caused by transient electromagnetic bus noise, the critical attack signature must remain stable and be validated over **3 consecutive clock cycles** before the emergency state is locked in.
 
 ![Behavioral Verification Waveform](preuve_simulation.png)
+
 ---
 
 ## 📦 Repository Structure
@@ -55,6 +56,8 @@ Copyright (c) 2026 David Umberto Alvaro. All rights reserved.
 This technology is **PROPRIETARY and CONFIDENTIAL**. No open-source license is granted. Any unauthorized reproduction, modification, or distribution of these files without a written commercial agreement is strictly prohibited.
 
 The product is provided "As-Is," fully validated according to the summary reports and official timing diagrams provided in this repository.
+
+---
 
 # 🛡️ REIO-Drive v1.0 — ASIL-D Ready Safety IP Core
 
