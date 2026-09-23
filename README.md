@@ -27,14 +27,6 @@ The architecture has been fully compiled, synthesized, and validated under Xilin
 
 ------------------------------
 ## 💼 B2B Licensing & Engineering Services
-This IP Core is distributed under commercial non-exclusive licensing models for automotive and aerospace technology integrators.
-
-* Evaluation Evaluation Package: Black-box compiled binaries + 30 days time-bombed license evaluation.
-* Full RTL Source Buyout: Perpetual multi-project synthesis-ready source files + compliance traceability matrices.
-
-For compliance documents, custom port mappings, or integration audits in the Benelux/Europe area, please contact the lead systems architect.
-
-## 💼 B2B Licensing & Engineering Services
 
 This IP Core and Software Crate are distributed exclusively under commercial, non-exclusive end-user license agreements (EULA) for automotive, robotics, and aerospace technology integrators.
 
@@ -43,4 +35,3 @@ This IP Core and Software Crate are distributed exclusively under commercial, no
 *   **Annual Maintenance & Support:** Technical SLA upgrades, compliance audit assistance, and synthesis integration support for newer Xilinx Vivado toolchains.
 
 For commercial inquiries, licensing quotes, or to request a Non-Disclosure Agreement (NDA) for technical evaluation, please contact the lead systems architect directly via private message.
-
