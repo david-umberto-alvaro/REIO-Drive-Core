@@ -59,3 +59,64 @@ Copyright (c) 2026 David Umberto Alvaro. Tous droits réservés.
 Cette technologie est **PROPRIÉTAIRE et CONFIDENTIAL**. Aucune licence open-source n'est accordée. Toute reproduction, modification ou distribution non autorisée de ces fichiers sans un accord commercial écrit est strictement interdite. 
 
 Le produit est fourni « En l'état » (*As-Is*), entièrement validé selon les rapports de synthèse et les chronogrammes officiels fournis dans ce dépôt.
+
+---
+
+# 🛡️ REIO-Drive Core v1.0 — ASIL-D Ready Safety IP Core
+
+REIO-Drive Core v1.0 is a dual-safety containment architecture (Safety IP Core) designed to instantly intercept and isolate malicious fault injections or data corruption in transit.
+
+This module provides highly deterministic hybrid protection for autonomous vehicles, industrial-grade drones, and robotic systems subject to critical safety requirements (**ISO 26262 ASIL-D**).
+
+---
+
+## 📈 Dual Containment Architecture (SIL vs. HIL)
+
+To meet the rigorous constraints of modern embedded architectures, REIO-Drive strictly separates its software logic from its hardware execution:
+
+*   **Software Layer (Software-in-the-Loop - SIL):** Managed by a **bare-metal Rust library (`no_std`)** via a secure FFI interface for embedded C. It ensures fine-grained memory management and the enforcement of security policies with deterministic latency of less than **2 µs**.
+*   **Hardware Layer (Hardware-in-the-Loop - HIL):** Implemented as an ultra-optimized synchronous finite state machine (FSM) in **VHDL/Verilog**. It guarantees physical bus isolation in exactly **1 clock cycle (10 ns at 100 MHz)**.
+
+---
+
+## 🔬 Validated Hardware Performance (Vivado v2026.1)
+
+The hardware implementation has been fully compiled, synthesized, and validated on an **AMD/Xilinx Artix-7 (xc7a35tcsg324-1)** target. ### 📊 Silicon Resource Utilization
+*   **Slice LUTs:** 6 used (out of 20,800) → Minimal silicon footprint of 0.03%, ideal for bus-edge integration without overhead.
+*   **Slice Registers:** 4 Flip-Flops used → Synchronous sequencing with negligible sequential overhead (< 0.01%).
+*   **Bonded IOBs:** 13 I/O pins used (11 `IBUF`, 2 `OBUF`).
+*   **Memory / DSP:** 0% (Pure combinatorial and sequential logic; no RAM blocks required).
+*   **Power Consumption:** < 1mW dynamic (negligible, ensuring seamless integration).
+
+### 🔎 Behavioral Verification (Waveform Simulation)
+*   **Post-Reset Safety:** Upon activation of the `reset` signal, the system immediately switches to a secure, tamper-proof fallback state (`statut_securite = '0'`, `declencher_secours = '1'`).
+*   **Entropy Filtering & Anti-Glitch:** The module incorporates a hardware-based threat pattern detection algorithm (*Pattern Threat Mapping*). To prevent false positives caused by transient electromagnetic bus noise, the critical attack signature must remain stable and be validated over **3 consecutive clock cycles** before the emergency state is locked in.
+
+![Behavioral Verification Waveform](preuve_simulation.png)
+---
+
+## 📦 Repository Structure
+
+*   `📁 /hard`: Official Vivado hardware synthesis report (`reio_drive_hardware_utilization_synth.rpt`) and simulation timing diagrams.
+*   `📁 /soft`: Production C header (`reio_drive.h`) exposing the secure Rust FFI interface. ---
+
+## 💼 Commercial Evaluation & B2B Integration
+
+The software suite and IP Core are distributed under an exclusive commercial license for automotive and industrial integrators.
+
+*   **Time-Limited Evaluation Package:** Provided as a precompiled binary (black-box `.a`/`.lib`) and a secure hardware netlist (`.dcp`).
+*   **Time-Lock Mechanism:** The evaluation is restricted by an internal 30-day cryptographic time-lock mechanism ("time-bomb"), based on a hardware real-time clock (RTC) check that cannot be tampered with by the host.
+*   **Production License:** Full access to production netlists and turnkey custom integration (Dedicated Engineering Services).
+
+For technical inquiries, detailed documentation, or HIL test protocols, please contact the system architect directly via private message to arrange a Non-Disclosure Agreement (NDA).
+
+---
+
+## ⚖️ Intellectual Property & Legal Notice
+
+Copyright (c) 2026 David Umberto Alvaro. All rights reserved.
+
+This technology is **PROPRIETARY and CONFIDENTIAL**. No open-source license is granted. Any unauthorized reproduction, modification, or distribution of these files without a written commercial agreement is strictly prohibited.
+
+The product is provided "As-Is," fully validated according to the summary reports and official timing diagrams provided in this repository.
+
