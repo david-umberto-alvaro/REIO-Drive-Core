@@ -1,8 +1,8 @@
 # 🛡️ REIO-Drive Core v1.0 — ASIL-D Ready Safety IP Core
 
-[![License](https://shields.io)](LICENSE)
-[![Vivado](https://shields.io)](hard/)
-[![Target](https://shields.io)](hard/)
+![License](https://shields.io)
+![Vivado](https://shields.io)
+![Target](https://shields.io)
 
 REIO-Drive Core v1.0 est une architecture de confinement duale de sécurité (Safety IP Core) conçue pour intercepter et isoler instantanément les injections de fautes malveillantes ou les corruptions de données en transit. 
 
@@ -63,4 +63,3 @@ Copyright (c) 2026 David Umberto Alvaro. Tous droits réservés.
 Cette technologie est **PROPRIÉTAIRE et CONFIDENTIAL**. Aucune licence open-source n'est accordée. Toute reproduction, modification ou distribution non autorisée de ces fichiers sans un accord commercial écrit est strictement interdite. 
 
 Le produit est fourni « En l'état » (*As-Is*), entièrement validé selon les rapports de synthèse et les chronogrammes officiels fournis dans ce dépôt.
-
