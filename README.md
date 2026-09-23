@@ -33,3 +33,5 @@ This IP Core is distributed under commercial non-exclusive licensing models for 
 * Full RTL Source Buyout: Perpetual multi-project synthesis-ready source files + compliance traceability matrices.
 
 For compliance documents, custom port mappings, or integration audits in the Benelux/Europe area, please contact the lead systems architect.
+
+![Behavioral Verification Waveform](preuve_simulation.png)
