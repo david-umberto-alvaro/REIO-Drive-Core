@@ -6,7 +6,16 @@ Welcome to the official repository of the **REIO** architecture. This repository
 
 ## 🗂️ Technology Divisions
 
-### 🤖 1. REIO-Drive Division (`/drive`) — Automotive & Robotics
+### ⚡ 1. REIO-Chain Division (`/chain`) — Ultra-Low Latency HFT
+
+This division provides hardware-only wire-speed frame arbitration for High-Frequency Trading pipelines.
+
+* **HARDWARE ENGINE (RTL):**
+  - **Engine:** Strict Register-Transfer Level combinatorial logic (**VHDL/Verilog**).
+  - **Performance:** Bounded to **1 deterministic clock cycle** (2.5 ns latency on 400 MHz SmartNIC targets).
+  - **Overhead:** **0% CPU Overhead** and zero software layers, eliminating 100% of OS jitter vectors.
+
+### 🤖 2. REIO-Drive Division (`/drive`) — Automotive & Robotics
 
 This division provides dual-containment security engineered for **ISO 26262 ASIL-D** environments.
 
@@ -16,15 +25,6 @@ This division provides dual-containment security engineered for **ISO 26262 ASIL
 * **HARDWARE LAYER (HIL):**
   - **Engine:** Synchronous Finite State Machine (FSM) implemented in **VHDL/Verilog**.
   - **Performance:** Physical bus isolation executed in exactly **1 clock cycle (10 ns at 100 MHz)**.
-
-### ⚡ 2. REIO-Chain Division (`/chain`) — Ultra-Low Latency HFT
-
-This division provides hardware-only wire-speed frame arbitration for High-Frequency Trading pipelines.
-
-* **HARDWARE ENGINE (RTL):**
-  - **Engine:** Strict Register-Transfer Level combinatorial logic (**VHDL/Verilog**).
-  - **Performance:** Bounded to **1 deterministic clock cycle** (2.5 ns latency on 400 MHz SmartNIC targets).
-  - **Overhead:** **0% CPU Overhead** and zero software layers, eliminating 100% of OS jitter vectors.
 
 ---
 
@@ -54,7 +54,16 @@ Bienvenue dans le dépôt officiel de l'architecture **REIO**. Ce dépôt héber
 
 ## 🗂️ Divisions technologiques
 
-### 🤖 1. Division REIO-Drive (`/drive`) — Automobile et Robotique
+### ⚡ 1. Division REIO-Chain (`/chain`) — HFT (Trading Haute Fréquence) à ultra-faible latence
+
+Cette division fournit une arbitration de trames matérielle (sans intervention logicielle) à vitesse filaire (*wire-speed*) pour les chaînes de traitement de trading haute fréquence.
+
+* **MOTEUR MATÉRIEL (RTL) :**
+- **Moteur :** Logique combinatoire stricte au niveau RTL (Register-Transfer Level) (**VHDL/Verilog**). 
+- **Performance :** Bornée à **1 cycle d'horloge déterministe** (latence de 2,5 ns sur cibles SmartNIC à 400 MHz). 
+- **Surcharge :** **0 % de surcharge CPU** et aucune couche logicielle, éliminant 100 % des vecteurs de gigue (*jitter*) liés au système d'exploitation.
+
+### 🤖 2. Division REIO-Drive (`/drive`) — Automobile et Robotique
 
 Cette division fournit une sécurité à double confinement conçue pour les environnements **ISO 26262 ASIL-D**.
 
@@ -64,15 +73,6 @@ Cette division fournit une sécurité à double confinement conçue pour les env
 * **COUCHE MATÉRIELLE (HIL) :**
 - **Moteur :** Machine à états finis (FSM) synchrone implémentée en **VHDL/Verilog**. 
 - **Performance :** Isolation physique du bus effectuée en exactement **1 cycle d'horloge (10 ns à 100 MHz)**.
-
-### ⚡ 2. Division REIO-Chain (`/chain`) — HFT (Trading Haute Fréquence) à ultra-faible latence
-
-Cette division fournit une arbitration de trames matérielle (sans intervention logicielle) à vitesse filaire (*wire-speed*) pour les chaînes de traitement de trading haute fréquence.
-
-* **MOTEUR MATÉRIEL (RTL) :**
-- **Moteur :** Logique combinatoire stricte au niveau RTL (Register-Transfer Level) (**VHDL/Verilog**). 
-- **Performance :** Bornée à **1 cycle d'horloge déterministe** (latence de 2,5 ns sur cibles SmartNIC à 400 MHz). 
-- **Surcharge :** **0 % de surcharge CPU** et aucune couche logicielle, éliminant 100 % des vecteurs de gigue (*jitter*) liés au système d'exploitation.
 
 ---
 
