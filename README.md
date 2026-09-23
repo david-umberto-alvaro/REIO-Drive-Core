@@ -35,3 +35,11 @@ This IP Core and Software Crate are distributed exclusively under commercial, no
 *   **Annual Maintenance & Support:** Technical SLA upgrades, compliance audit assistance, and synthesis integration support for newer Xilinx Vivado toolchains.
 
 For commercial inquiries, licensing quotes, or to request a Non-Disclosure Agreement (NDA) for technical evaluation, please contact the lead systems architect directly via private message.
+
+## ⚖️ Legal & Licensing
+
+Copyright (c) 2026 David Umberto Alvaro. All rights reserved.
+
+This software and hardware IP core are PROPRIETARY and CONFIDENTIAL. No open-source license is granted. 
+
+Any unauthorized copying, modification, or distribution of these files without an explicit, signed Commercial License Agreement is strictly prohibited.
