@@ -21,5 +21,3 @@ Our verified routed placement architecture reports the minimal structural footpr
 
 ## 💼 B2B Site Licensing (SMART Belgique)
 - **30-Day Evaluation Package:** 0 € (Free Sandbox DCP under strict NDA)
-- **Commercial Site License:** **X,000 € HTVA** per data center colocation site (Flat-fee, royalty-free).
-- **Mandatory SLA Support Retainer:** 15% Annually
