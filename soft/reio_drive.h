@@ -4,7 +4,6 @@
 #include <stdint.h>
 #include <stddef.h>
 
-/* Énumération explicite des codes de retour pour l'intégrateur */
 typedef enum {
     REIO_SUCCESS          = 0x00,
     REIO_ERROR_CORRUPTION = 0x01,
@@ -17,11 +16,6 @@ typedef enum {
 extern "C" {
 #endif
 
-/**
- * @brief Vérifie l'intégrité du flux de données REIO.
- * @note La vérification de la validité de la licence d'évaluation 
- *       doit être gérée en interne par la FFI Rust.
- */
 reio_status_t verifier_flux_reio(const uint8_t *buffer_ptr, size_t taille);
 
 #ifdef __cplusplus
