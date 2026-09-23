@@ -1,0 +1,16 @@
+# Blocage absolu des fichiers sources matériels REIO-Chain
+*.vhd
+*.vhdl
+*.v
+*.sv
+
+# Blocage des livrables et checkpoints d'évaluation
+*.dcp
+*.bit
+*.bin
+
+# Purge des dossiers de compilation et caches Vivado
+.Xil/
+*.jou
+*.log
+*.str
