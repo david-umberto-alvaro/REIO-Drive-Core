@@ -8,8 +8,8 @@ This directory contains the behavioral specifications for **REIO-Chain Core Bloc
 * **Security & Synthesis:** Features wire-speed pattern threat mapping and an ultra-optimized footprint of 2 Slice LUTs and 1 Slice Register.
 
 ## 📊 Gate-Level Synthesis Results
-* **Slice LUTs:** 6 used (Minimal hardware footprint)
-* **Slice Registers:** 6 used (Minimal hardware footprint)
+* **Slice LUTs:** Slice LUTs: 2 used
+* **Slice Registers:** Slice Registers: 1 Register
 * **DSP / Block RAM:** 0% (Pure sequential logic, no block RAM latency overhead)
 * 
 ![Behavioral Verification Waveform](simulation_proof.png)
@@ -38,7 +38,7 @@ Ce répertoire contient les spécifications comportementales du **REIO-Chain Cor
 * **Sécurité et synthèse :** Intègre une fonction de correspondance de motifs de menaces à la vitesse du lien (wire-speed) et présente une empreinte ultra-optimisée de 2 LUTs de Slice et 1 registre de Slice.
 
 ## 📊 Résultats de synthèse au niveau des portes logiques
-* **LUTs (Slice) :** 6 utilisées (Empreinte matérielle minimale)
+* **LUTs (Slice) :** 2 utilisées 
 * **Registres (Slice) :** 1 registres (Chemin d'échantillonnage synchrone)
 * **DSP / Block RAM :** 0 % (Logique purement séquentielle, sans latence additionnelle liée à la Block RAM)
 *
