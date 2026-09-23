@@ -17,6 +17,8 @@ The architecture has been fully compiled, synthesized, and validated under Xilin
 * Deterministic Transient Protection: The premium hardware finite-state machine (FSM) filters out electromagnetic glitches and transient bus noise by requiring three consecutive cycles of attack validation before latching the emergency status.
 * Execution Latency: Reaction and physical bus isolation execute within exactly 1 to 3 clock cycles (10ns to 30ns at 100MHz), completely outperforming standard Software-in-the-Loop (SIL) constraints.
 
+![Behavioral Verification Waveform](preuve_simulation.png)
+
 ------------------------------
 ## 📦 Repository Structure
 
@@ -32,4 +34,12 @@ This IP Core is distributed under commercial non-exclusive licensing models for 
 
 For compliance documents, custom port mappings, or integration audits in the Benelux/Europe area, please contact the lead systems architect.
 
-![Behavioral Verification Waveform](preuve_simulation.png)
+## ⚖️ Legal & Licensing
+
+Copyright (c) 2026 David Umberto Alvaro. All rights reserved.
+
+This software and hardware IP core are PROPRIETARY and CONFIDENTIAL. 
+No open-source license is granted. 
+
+Any unauthorized copying, modification, or distribution of these files 
+without an explicit, signed Commercial License Agreement is strictly prohibited.
