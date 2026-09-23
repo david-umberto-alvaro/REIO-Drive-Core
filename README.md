@@ -1,4 +1,4 @@
-# 🛡️ REIO Tech — High-Velocity Safety & Performance IP Cores
+# 🛡️ REIO — High-Velocity Safety & Performance IP Cores
 
 Welcome to the official repository of the **REIO** architecture. This repository hosts proprietary, ultra-low latency hardware and software modules designed for critical infrastructure.
 
