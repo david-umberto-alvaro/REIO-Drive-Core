@@ -16,17 +16,6 @@ This division provides hardware-only wire-speed frame arbitration for High-Frequ
   - **Resources:** Ultra-optimized footprint consuming only **2 Slice LUTs** and **1 Slice Register**.
   - **Overhead:** **0% CPU Overhead** and zero software layers, eliminating 100% of OS jitter vectors.
 
-### 🤖 2. REIO-Drive Division (`/drive`) — Automotive & Robotics
-
-This division provides dual-containment security engineered for **ISO 26262 ASIL-D** environments.
-
-* **SOFTWARE LAYER (SIL):**
-  - **Engine:** Bare-metal **Rust library (`no_std`)** with a secure C-FFI layer.
-  - **Performance:** Bounded execution latency **under 2 µs** with fine-grained memory insulation.
-* **HARDWARE LAYER (HIL):**
-  - **Engine:** Synchronous Finite State Machine (FSM) implemented in **VHDL/Verilog**.
-  - **Performance:** Physical bus isolation executed in exactly **1 clock cycle (10 ns at 100 MHz)**.
-
 ---
 
 ## 💼 Commercial Licensing & Evaluation
@@ -64,17 +53,6 @@ Cette division fournit une fonction d'arbitrage de trames matérielle (purement 
   - **Performance :** Limitée à exactement **1 cycle d'horloge déterministe** (latence de 2,5 ns sur des cibles SmartNIC à 400 MHz, 10 ns sur des cartes d'évaluation à 100 MHz).
   - **Ressources :** Empreinte ultra-optimisée consommant seulement **2 LUTs de Slice** et **1 registre de Slice**.
   - **Surcharge :** **0 % de surcharge CPU** et aucune couche logicielle, éliminant 100 % des vecteurs de gigue (*jitter*) liés au système d'exploitation.
-
-### 🤖 2. Division REIO-Drive (`/drive`) — Automobile et Robotique
-
-Cette division fournit une sécurité à double confinement conçue pour les environnements **ISO 26262 ASIL-D**.
-
-* **COUCHE LOGICIELLE (SIL) :**
-- **Moteur :** Bibliothèque **Rust** « bare-metal » (`no_std`) avec une couche C-FFI sécurisée. 
-- **Performance :** Latence d'exécution bornée **inférieure à 2 µs** avec isolation mémoire fine.
-* **COUCHE MATÉRIELLE (HIL) :**
-- **Moteur :** Machine à états finis (FSM) synchrone implémentée en **VHDL/Verilog**. 
-- **Performance :** Isolation physique du bus effectuée en exactement **1 cycle d'horloge (10 ns à 100 MHz)**.
 
 ---
 
