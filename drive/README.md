@@ -1,4 +1,4 @@
-# 🛡️ REIO-Drive Core v1.0 — ASIL-D Ready Safety IP Core
+# 🛡️ REIO-Drive v1.0 — ASIL-D Ready Safety IP Core
 
 REIO-Drive Core v1.0 is a dual-safety containment architecture (Safety IP Core) designed to instantly intercept and isolate malicious fault injections or data corruption in transit.
 
@@ -56,7 +56,7 @@ This technology is **PROPRIETARY and CONFIDENTIAL**. No open-source license is g
 
 The product is provided "As-Is," fully validated according to the summary reports and official timing diagrams provided in this repository.
 
-# 🛡️ REIO-Drive Core v1.0 — ASIL-D Ready Safety IP Core
+# 🛡️ REIO-Drive v1.0 — ASIL-D Ready Safety IP Core
 
 REIO-Drive Core v1.0 est une architecture de confinement duale de sécurité (Safety IP Core) conçue pour intercepter et isoler instantanément les injections de fautes malveillantes ou les corruptions de données en transit. 
 
