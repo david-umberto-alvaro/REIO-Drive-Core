@@ -1,16 +1,19 @@
-# Blocage absolu des fichiers sources matériels REIO-Chain
-*.vhd
-*.vhdl
-*.v
-*.sv
-
-# Blocage des livrables et checkpoints d'évaluation
-*.dcp
-*.bit
-*.bin
-
-# Purge des dossiers de compilation et caches Vivado
-.Xil/
-*.jou
+# Vivado Directory Clean-up
 *.log
+*.jou
 *.str
+.Xil/
+vhdlnsim.sah
+work/
+xsim.dir/
+xsim.ini
+sim_1/
+
+# Rust / Cargo Compilation Outputs
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# Operating System Files
+Thumbs.db
+.DS_Store
