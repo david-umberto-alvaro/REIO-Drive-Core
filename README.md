@@ -4,17 +4,21 @@ Welcome to the official repository of the **REIO** architecture. This repository
 
 ---
 
-## 🗂️ Technology Divisions
+## 🗂 Technology Divisions
 
-### ⚡ 1. REIO-Chain Division (`/chain`) — Ultra-Low Latency HFT
+### ⚡ 1. REIO-Chain Division ( /chain ) — Ultra-Low Latency HFT
 
-This division provides hardware-only wire-speed frame arbitration for High-Frequency Trading pipelines.
+This division provides an enterprise-grade hardware/software Co-Design framework optimized for wire-speed frame arbitration, packet filtration, and sub-nanosecond automated line disconnection.
 
 * **HARDWARE ENGINE (RTL):**
-  - **Engine:** Strict Register-Transfer Level combinatorial logic (VHDL/Verilog).
-  - **Performance:** Bounded to exactly **1 deterministic clock cycle** (2.5 ns latency on 400 MHz SmartNIC targets, 10 ns on 100 MHz evaluation boards).
-  - **Resources:** Ultra-optimized footprint consuming only **2 Slice LUTs** and **1 Slice Register**.
-  - **Overhead:** **0% CPU Overhead** and zero software layers, eliminating 100% of OS jitter vectors.
+    * **Engine:** Strict Register-Transfer Level logic (VHDL/Verilog) with native AXI4-Stream compliance.
+    * **Performance:** Bounded to exactly **1 deterministic clock cycle** (2.5 ns latency on 400 MHz SmartNIC targets).
+    * **Resources:** Micro-optimized hardware footprint (down to 9 LUTs and 42 Registers for the Premium Core).
+    * **Overhead:** **0% CPU Overhead**, eliminating 100% of software-induced OS jitter vectors on the data path.
+
+* **SOFTWARE ECOSYSTEM (SDK):**
+    * **Driver Core:** Monolithic, bare-metal **Rust `no_std`** driver managing volatile MMIO register mapping.
+    * **C++ Bridge:** Un-mangled **Zero-Overhead C-FFI binding** for seamless integration into high-frequency trading engines.
 
 ---
 
