@@ -1,4 +1,8 @@
-# Vivado Directory Clean-up
+# =========================================================================
+# REIO SYSTEMS — ENTERPRISE PROJECT R&D CLEANUP FILTER
+# =========================================================================
+
+# AMD/Xilinx Vivado Temporary Outputs & Caches
 *.log
 *.jou
 *.str
@@ -7,13 +11,15 @@ vhdlnsim.sah
 work/
 xsim.dir/
 xsim.ini
-sim_1/
+.analytics/
+*.ppx
+*.bak
 
-# Rust / Cargo Compilation Outputs
+# Rust Cargo Compilation & Dependency Artifacts
 /target/
-**/*.rs.bk
 Cargo.lock
+**/*.rs.bk
 
-# Operating System Files
+# Local OS Files
 Thumbs.db
 .DS_Store
