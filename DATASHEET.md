@@ -64,7 +64,7 @@ telemetry_hit_counter    : --->[00000000]--->[00000001] (Instant Hardware Update
 
 ---
 
-## 6. COMMERCIAL AVAILABILITY
-* **Evaluation Package:** 30-Day Sandbox Netlist (`.dcp` file) available for Hardware-in-the-Loop (HIL) testing.
-* **Licensing Model:** Site License / Flat-Fee structure (Royalty-free deployment).
-* **Legal & Invoicing Framework:** Managed through **SMART Belgique** for intellectual property asset protection and corporate compliance.
+## ## 6. PROFESSIONAL AVAILABILITY & R&D INTEGRATION
+* **Consulting & Integration Model:** Available for specialized R&D contract missions, custom RTL core adaptation, and software plane porting.
+* **IP Ownership Framework:** 100% of the tailor-made source code (VHDL/Rust) and compiled assets (.dcp) are fully transferred to the client upon project completion.
+* **Legal & Invoicing Framework:** Managed through **SMART Belgique** for full intellectual property asset protection, structural compliance, and simplified corporate procurement.
