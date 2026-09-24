@@ -1,4 +1,4 @@
-# ⚡ REIO-Chain v3 Enterprise — Commercial Licensing & Terms of Use
+# ⚡ REIO-Chain — Commercial Licensing & Terms of Use
 
 This repository houses the public technical certification, structural hardware reports, and mathematical validation files for the **REIO-Chain v3 Enterprise (SPU_103)** Intellectual Property (IP) Core. 
 
