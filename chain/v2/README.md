@@ -5,7 +5,7 @@ This directory houses the commercial blueprints and implementation matrices for 
 ## 🔬 Expanded Core Specifications
 - **Bus Standard:** Native AXI4-Stream Compliance (`s_axis_tdata`, `m_axis_tvalid`, `m_axis_tready`).
 - **Dynamic Masking:** On-the-fly customizable threat filtering via an 8-bit dynamic runtime register.
-- **Hardware Telemetry:** Integrated 32-bit hardware hit counter (`telemetrie_attaques`) tracking wire-level mitigations in real-time with 0% CPU overhead.
+* **Hardware Telemetry:** Integrated 32-bit hardware hit counter (`telemetry_hit_counter`) tracking wire-level mitigations in real-time with 0% CPU overhead.
 
 ## 📊 Physical Implementation Results (AMD Xilinx Artix-7)
 Our verified routed placement architecture reports the minimal structural footprint for an enterprise-grade AXI component:
