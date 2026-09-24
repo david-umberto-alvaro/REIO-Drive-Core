@@ -1,35 +1,35 @@
-# ⚡ REIO-Chain: Deterministic Ultra-Low Latency Co-Design Framework
+# ⚡ REIO-Chain: Ultra-Low Latency Co-Design Architecture Division
 
+[![DOI](https://zenodo.org)](https://zenodo.org)
 
-Welcome to the official repository of the REIO-Chain framework, showcasing an independent R&D portfolio for ultra-low latency HFT fabrics and critical cyber-physical infrastructures.
-* **Scientific Paper:** [Read Specifications on Zenodo](https://zenodo/ecords/20743411.org)
+Official R&D repository showcasing the hardware implementation matrices of the **REIO-RFC-003 V3 Standard**. REIO-Chain is a proprietary, deterministic hardware/software Co-Design framework engineered for wire-speed network arbitration and line disconnection tailored for low-latency High-Frequency Trading (HFT) infrastructures.
+
+* **Scientific Specification:** [Read Paper on Zenodo](https://zenodo.org)
 * **Official Registry DOI:** `10.5281/zenodo.20743411`
 
 ---
 
-## 💼 Dual-Licensing & Distribution Model
+## 🚀 REIO-Chain v2 Premium (Enterprise Tier)
 
-REIO-Chain uses a dual-licensing matrix:
+The v2 Premium sub-system is a closed-source, highly optimized silicon fabric designed to mathematically immunize cyber-physical communication layers against critical fault injections and data corruption using a paraconsistent trivalent logic (L3) matrix.
 
-### 🌐 1. Community Edition (REIO-Chain v1 Core) — Open Source
-* **Licensing:** **GNU GPL v3 License**.
-* **Access:** Available in the `/chain/v1` directory.
-* **Scope:** Standard synchronous wire-level frame arbitration for academic and open R&D.
+### 📊 Hardware RTL Specifications
+* **Silicon Footprint:** Strictly micro-optimized down to **9 Slice LUTs** and **42 Registers** targeting AMD/Xilinx Artix-7 matrices.
+* **Timing Closure:** Bounded to exactly **1 deterministic clock cycle**, achieving a **2.5 ns constant hardware execution latency** at 400 MHz with strictly **TNS = 0.000 ns** in the high-speed X0Y0 domain.
 
-### 🚀 2. Enterprise Edition (REIO-Chain v2 Premium) — Proprietary
-* **Licensing:** Commercial Proprietary Site License (Royalty-Free, exempt from GPL).
-* **Access:** Closed-source via corporate NDA.
-* **Scope:** Micro-optimized hardware footprint achieving **2.5 ns deterministic hardware execution latency** at 400 MHz.
+### 🦀 Software SDK Integration
+* **Driver Core:** Monolithic bare-metal **Rust `#[no_std]`** driver managing volatile Memory-Mapped I/O (MMIO) register tracking.
+* **Execution Overhead:** Un-mangled **Zero-Overhead C++ FFI** runtime bindings ensuring strictly 0 nanoseconds of data translation latency on the critical path.
 
 ---
 
-## 🗂️ Repository Structure
+## 💼 Evaluation Sandbox & Corporate Licensing
 
-* **`[ /chain/v1 ]`** — Open-source VHDL core logic files under GPLv3.
-* **`[ /chain/v2 ]`** — Enterprise Edition documentation, verification reports, and technical datasheets.
+The entire VHDL source code, synthesizable RTL netlists, and driver source blocks are strictly proprietary. 
 
----
+Corporate engineering teams seeking to evaluate the **v2 Premium** architecture within their hardware-in-the-loop (HIL) testing environments can request a binarized evaluation package (Pre-compiled Out-of-Context `.dcp` design checkpoints and compiled static software libraries `.a`).
 
-## 📧 Evaluation Sandbox & Professional Consulting
+* **Access Requirements:** Evaluation assets are distributed exclusively under a strict unilateral Non-Disclosure Agreement (NDA).
+* **Governance:** All commercial licensing, deployment rights, and professional consulting services are legally administered through the **SMART Belgique** structural framework.
 
-Corporate evaluations of the **v2 Enterprise Edition** require a unilateral Non-Disclosure Agreement (NDA). Transactions and consulting services are administered via the **SMART Belgique** structural framework.
+📧 *To request technical blueprints, initiate an NDA draft, or request custom R&D integration quotes, contact the lead hardware architect directly via private messaging.*
