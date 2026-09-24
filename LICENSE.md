@@ -1,11 +1,15 @@
-# 🛡️ REIO-Drive-Core v1.0 — Commercial & Evaluation Licensing
+# ⚡ REIO-Chain Core Framework — Licensing Governance
 
-Copyright (c) 2026 David Umberto Alvaro. All rights reserved.
+## 🌐 1. Open Source Community License (REIO-Chain v1 Core)
+The open-source RTL source code and architectural blueprints located within the `/chain/v1` directory are strictly governed by the **GNU General Public License v3.0 (GPLv3)**. 
 
-## ## 1. Evaluation License (Kit d'évaluation)
-Permission is hereby granted, free of charge, to any person or organization obtaining a copy of this software library and hardware specification (Netlist/Bitstream) to test and simulate the core in a non-production, non-commercial environment for a maximum period of 30 days. The software component includes a built-in time-bomb function that automatically deactivates after this window.
+Any individual or organization is free to clone, benchmark, and modify the v1 fabric for academic and non-commercial research, provided that any derivative sub-system or integrated software work is also fully disclosed under identical GPLv3 copyleft terms.
 
-## ## 2. Commercial License (Production & Deployment)
-Any deployment in production systems (drones, robotics, automotive, industrial) or any commercial usage requires a paid Commercial End-User License Agreement (EULA) signed by the author. The product is delivered exclusively as a secure black-box netlist (.dcp) and compiled binary (.a/.lib). Reverse-engineering, decompilation, or source code buyout are strictly prohibited.
+---
 
-For commercial licensing quotes, pricing tables, or custom integration support, please contact the author directly via private message.
+## 💼 2. Commercial Proprietary Site License (REIO-Chain v3 Premium)
+The high-performance sub-nanosecond HFT framework, advanced AXI4-Stream architectures, bare-metal Rust `no_std` drivers, and zero-overhead C++ FFI runtimes located within the Enterprise tier are strictly closed-source and proprietary.
+
+Commercial deployment, execution within live corporate production fabrics, and exemption from open-source GPLv3 copyleft constraints require a paid **Commercial Proprietary Site License** signed by the architect.
+
+All commercial transactions, compliance verifications, and professional asset handovers are legally administered through the **SMART Belgique** structural framework. For corporate evaluation sandbox access under a unilateral Non-Disclosure Agreement (NDA), please contact the lead hardware architect via private messaging.
