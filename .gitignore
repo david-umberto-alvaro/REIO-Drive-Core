@@ -32,7 +32,7 @@ Thumbs.db
 Cargo.lock
 target/
 
-# Bloquer les fichiers locaux de l'interface Vivado
+# Block Vivado interface local files
 *.xpr
 reio_chain_l3.srcs/
 reio_chain_l3.sim/
