@@ -1,17 +1,22 @@
 # ⚡ REIO-Chain Division — High-Frequency Trading Core Matrices
 
-Welcome to the hardware-acceleration architecture division optimized for wire-speed financial execution lines, colocation infrastructures, and FPGA SmartNIC acceleration.
+Welcome to the hardware-acceleration architecture division optimized for financial execution lines and FPGA acceleration. Please select your required technology framework:
 
-Please select the specific technology framework required for your infrastructure deployment:
+## 🗂 Technology Sub-Directories
 
-## 🗂️ Technology Sub-Directories
+### 📂 [v1 Base Framework](./v1)
+* **Silicon Footprint:** Minimalist synchronous wire-level frame arbitrator.
+* **Licensing:** Entry-level corporate license.
 
-*   ### [📂 v1 Base Framework](./v1)
-    * **Silicon Footprint:** 2 Slice LUTs / 1 Slice Register.
-    * **Perimeter:** Minimalist synchronous wire-level frame arbitrator for raw hardware integration blocks.
-    * **Licensing:** Entry-level corporate flat-fee license.
+---
 
-*   ### [📂 v2 Premium Framework](./v2)
-    * **Silicon Footprint:** 9 Slice LUTs / 42 Slice Registers.
-    * **Perimeter:** Full Enterprise-Ready sub-system featuring native AXI4-Stream compliance, dynamic runtime masking, and an automated 32-bit hardware telemetry hit counter.
-    * **Licensing:** Comprehensive Permanent Site License for enterprise production data centers.
+### 📂 [v2 Premium Framework](./v2)
+* **Silicon Footprint:** Enterprise-ready co-design sub-system.
+* **Licensing:** Comprehensive Permanent Site License.
+
+#### 🛠️ v2.A — Hardware Layers (RTL)
+* **Core Fabric:** Strict RTL combinatorial and sequential logic with AXI4-Stream compliance.
+* **Timing Closure:** Deterministic clock cycle bounded performance.
+
+#### 🔒 v2.B — Software Layers (SDK)
+* **Driver Core:** Rust `no_std` driver with C++ FFI binding and zero-overhead data translation latency.
