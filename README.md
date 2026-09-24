@@ -7,9 +7,9 @@ Official R&D repository showcasing the hardware implementation matrices of the *
 
 ---
 
-## 🚀 REIO-Chain (Enterprise Tier)
+## 🚀 REIO-Chain
 
-The v2 Premium sub-system is a closed-source, highly optimized silicon fabric designed to mathematically immunize cyber-physical communication layers against critical fault injections and data corruption using a paraconsistent trivalent logic (L3) matrix.
+The sub-system is a closed-source, highly optimized silicon fabric designed to mathematically immunize cyber-physical communication layers against critical fault injections and data corruption using a paraconsistent trivalent logic (L3) matrix.
 
 ### 📊 Hardware RTL Specifications
 * **Silicon Footprint:** Strictly micro-optimized down to **9 Slice LUTs** and **42 Registers** targeting AMD/Xilinx Artix-7 matrices.
