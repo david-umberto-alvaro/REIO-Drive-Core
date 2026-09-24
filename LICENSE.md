@@ -7,7 +7,7 @@ Any individual or organization is free to clone, benchmark, and modify the v1 fa
 
 ---
 
-## 💼 2. Commercial Proprietary Site License (REIO-Chain v3 Premium)
+## 💼 2. Commercial Proprietary Site License (REIO-Chain v2 Premium)
 The high-performance sub-nanosecond HFT framework, advanced AXI4-Stream architectures, bare-metal Rust `no_std` drivers, and zero-overhead C++ FFI runtimes located within the Enterprise tier are strictly closed-source and proprietary.
 
 Commercial deployment, execution within live corporate production fabrics, and exemption from open-source GPLv3 copyleft constraints require a paid **Commercial Proprietary Site License** signed by the architect.
