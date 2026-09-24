@@ -16,7 +16,7 @@ The goal of this project is to model a minimal, low-footprint hardware disconnec
 * **Timing Closure:** Perfect execution path constraint inside the high-speed X0Y0 clock domain (TNS = 0.000 ns).
 
 ### 📊 Simulation Proof
-![Simulation Proof](simulation_proof.png)
+![Simulation Proof](simulation_rust.png)
 
 ### 🦀 Software Bridge
 * **Driver Interface:** Experimental **Rust `#[no_std]`** MMIO control layer for minimal software overhead.
