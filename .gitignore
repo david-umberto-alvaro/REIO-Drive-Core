@@ -23,3 +23,19 @@ Cargo.lock
 # Local OS Files
 Thumbs.db
 .DS_Store
+
+# Bloquer les fichiers sources matériels et logiciels secrets
+*.vhd
+*.v
+*.sv
+*.rs
+Cargo.lock
+target/
+
+# Bloquer les fichiers locaux de l'interface Vivado
+*.xpr
+reio_chain_l3.srcs/
+reio_chain_l3.sim/
+reio_chain_l3.hw/
+reio_chain_l3.cache/
+reio_chain_l3.runs/
