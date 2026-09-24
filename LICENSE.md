@@ -1,12 +1,13 @@
-# ⚡ REIO-Chain Framework — Licensing Governance
+# ⚡ REIO-Chain — Terms of Use & Portfolio Licensing
 
-## 💼 Commercial Proprietary Site License
+This repository houses a personal R&D Proof of Concept (PoC) and structural hardware reports intended exclusively for portfolio, educational, and technical demonstration purposes.
 
-The high-performance, deterministic hardware/software Co-Design framework, advanced AXI4-Stream architectures, bare-metal Rust `#[no_std]` drivers, and zero-overhead C++ FFI runtimes located within this repository are strictly closed-source and proprietary.
+## 🌐 1. Permitted Use & Academic Review
+* You are free to review the technical datasheets, clock utilization reports (`.rpt`), and simulation waveforms for educational cross-referencing and verification of the underlying paraconsistent logic matrix.
+* No rights are granted to commercially distribute, package, or sell the raw implementation blueprints without explicit attribution or direct consultation with the author.
 
-* **Academic & Evaluation Review:** The text descriptions, routed clock-tree utilization reports (`.rpt`), and behavioral simulation proofs are public for portfolio and verification purposes only. No rights are granted to reproduce, modify, or deploy the underlying logic fabric without explicit written authorization.
-* **Commercial Deployment:** Execution within live corporate production fabrics or integration into proprietary electronic trading engines requires a paid **Commercial Proprietary Site License** signed by the architect.
-* **Governance:** All commercial transactions, compliance verifications, and professional asset handovers are legally administered through the **SMART Belgique** structural framework.
+## 💼 2. Engineering & Freelance Consulting Services
+The core architecture showcased in this repository demonstrates verified engineering methodologies under AMD/Xilinx Vivado and software co-design principles. 
 
-### 📧 Evaluation Sandbox Access
-For corporate evaluation sandbox access (Pre-compiled Out-of-Context `.dcp` netlists and compiled static software libraries `.a`), engineering teams are required to execute a unilateral Non-Disclosure Agreement (NDA). Please contact the lead hardware architect directly via private messaging.
+* **Professional Inquiries:** All independent consulting services, system integration tasks, or custom VHDL/Rust micro-architecture modeling are legally administered and billed through the **SMART Belgique** structural framework.
+* **Collaboration:** For industrial partnerships, customized design adjustments, or full hardware-in-the-loop (HIL) sandbox evaluations, please contact the hardware architect directly via private messaging.
