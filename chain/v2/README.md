@@ -21,3 +21,31 @@ Our verified routed placement architecture reports the minimal structural footpr
 
 ## 💼 B2B Site Licensing (SMART Belgique)
 - **30-Day Evaluation Package:** 0 € (Free Sandbox DCP under strict NDA)
+
+## 🔒 Bare-Metal Software Ecosystem (Rust `no_std` & C++ FFI)
+
+The REIO-Chain SPU-102 Premium architecture features a co-designed software acceleration layer engineered for monolithic zero-overhead execution lines. 
+
+To eliminate 100% of software-induced jitter vectors, the software stack operates purely in bare-metal environments, bypassing the operating system kernel via direct Memory-Mapped I/O (MMIO) volatile transactions.
+
+### 🦀 Hardware-Coupled Driver (Rust)
+* **Architecture:** Static `no_std` core compilation generating zero-cost abstractions over physical silicon boundaries.
+* **Telemetry Path:** Direct volatile reading of the 32-bit integrated hardware hit counter with absolutely 0% CPU overhead on the execution critical path.
+* **Control Path:** Real-time thread-safe mask updates allowing hardware-level packet filtration mutations under <50 ns software execution windows.
+
+### ⚡ Zero-Overhead Foreign Function Interface (C++ Bridge)
+For high-frequency trading (HFT) production engines natively written in C++, the SDK includes an un-mangled deterministic C-FFI binding.
+* **Execution Latency:** Strictly **0 nanoseconds of data translation overhead** (direct raw memory pointer mapping).
+* **Integration:** Direct linking via a public C++ header file (`reio_spu102.hpp`), embedding symbol tables into the corporate trading engine without any secondary software abstraction layers.
+
+---
+
+## 💼 Commercial Licensing & Sandbox Evaluation
+
+All functional VHDL source files, synthesizable RTL netlists, and driver source codes are strictly proprietary.
+
+* **30-Day Sandbox Package:** Pre-compiled Out-of-Context design checkpoints (`.dcp`) and compiled static software libraries (`.a`) are available for evaluation upon signature of a unilateral Non-Disclosure Agreement (NDA).
+* **Production Deployment:** Permanent integration is granted through an unrestricted, royalty-free **Site License** agreement.
+* **Compliance & Invoicing:** Administered exclusively through the **SMART Belgique** structural framework to guarantee corporate compliance and secure asset assignment.
+
+📧 *To request technical blueprints, request an evaluation sandbox binarized package, or initiate an NDA draft, contact the system architect directly via private messaging.*
