@@ -1,6 +1,6 @@
-# ⚡ REIO-Chain: Sub-Nanosecond Hardware/Software Co-Design Framework
+# ⚡ REIO-Chain: Ultra-Low Latency Hardware/Software Co-Design Framework
 
-Welcome to the official repository of the REIO-Chain framework, a sub-nanosecond Layer-2 synchronous wire-speed network arbitrator and disconnector sub-system engineered for ultra-low latency High-Frequency Trading (HFT) fabrics and critical infrastructure protection.
+Welcome to the official repository of the REIO-Chain framework, a Ultra-Low Latency Layer-2 synchronous wire-speed network arbitrator and disconnector sub-system engineered for ultra-low latency High-Frequency Trading (HFT) fabrics and critical infrastructure protection.
 
 This architecture implements the paraconsistent trivalent logic (L3) matrix detailed in our registered scientific paper, providing physical-layer immunization against fault injections and data corruption.
 * **Scientific Blueprint:** [Read Specifications on Zenodo](https://zenodo.org)
