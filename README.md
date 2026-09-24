@@ -2,7 +2,7 @@
 
 
 Welcome to the official repository of the REIO-Chain framework, showcasing an independent R&D portfolio for ultra-low latency HFT fabrics and critical cyber-physical infrastructures.
-* **Scientific Paper:** [Read Specifications on Zenodo]([https://zenodo.org](https://zenodo.org/records/20743411)
+* **Scientific Paper:** [Read Specifications on Zenodo](https://zenodo/ecords/20743411.org)
 * **Official Registry DOI:** `10.5281/zenodo.20743411`
 
 ---
