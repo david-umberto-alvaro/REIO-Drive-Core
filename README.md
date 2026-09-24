@@ -1,9 +1,5 @@
 ## 📚 Theoretical Framework & Scientific Grounding
 
-[![DOI](https://zenodo.org)](https://doi.org)
-
-This repository houses the formal hardware implementation matrices of the **REIO-RFC-003 V3 Standard** published on Zenodo. This framework models a deterministic paraconsistent logic execution layer designed to mathematically immunize autonomous cyber-physical systems against physical disruptions and critical fault injections at the silicon layer.
-
 * **Academic Blueprint:** [Read Specifications on Zenodo]([https://zenodo.org/records/20743411](https://doi.org/10.5281/zenodo.20743411))
 * **Official Registry DOI:** `10.5281/zenodo.20743411`
 
