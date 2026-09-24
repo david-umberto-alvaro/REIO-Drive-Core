@@ -15,6 +15,9 @@ The goal of this project is to model a minimal, low-footprint hardware disconnec
 * **Resource Optimization:** Miniaturized logic architecture utilizing exactly **9 Slice LUTs** and **42 Registers** to maintain a deterministic **1-clock-cycle execution latency** (2.5 ns execution at 400 MHz).
 * **Timing Closure:** Perfect execution path constraint inside the high-speed X0Y0 clock domain (TNS = 0.000 ns).
 
+### 📊 Simulation Proof
+![Simulation Proof](simulation_proof.png)
+
 ### 🦀 Software Bridge
 * **Driver Interface:** Experimental **Rust `#[no_std]`** MMIO control layer for minimal software overhead.
 * **C++ Binding:** Clean C-FFI binding for low-overhead software integration.
