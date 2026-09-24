@@ -1,27 +1,21 @@
-# ⚡ REIO-Chain — Ultra-Low Latency HFT Arbitrator
+## 🌐 Open Source Community Licensing
 
-This directory contains the behavioral specifications for **REIO-Chain Core Block SPU-102**, an elite hardware-only synchronous frame arbitrator tailored for High-Frequency Trading (HFT) execution pipelines and wire-speed colocation infrastructures.
+Unlike the closed-source Enterprise tier, the production VHDL source code for **REIO-Chain v1 Core** is 100% open-source and publicly viewable in this directory. 
 
-## 🔬 Silicon Core Specifications
+* **License Framework:** Distributed under the terms of the **GNU GPL v3 License**.
+* **Scope of Use:** Academic research, sandbox benchmarking, and non-commercial hardware-in-the-loop (HIL) evaluations.
 
-* **Logic Execution & Latency:** Pure RTL combinatorial logic achieving 1 deterministic clock cycle (2.5 ns at 400 MHz, 10 ns at 100 MHz) with 0% CPU overhead.
-* **Security & Synthesis:** Features wire-speed pattern threat mapping and an ultra-optimized footprint of 2 Slice LUTs and 1 Slice Register.
+*⚠️ Compliance Notice: According to the GNU GPLv3 copyleft terms, any proprietary fork, commercial integration, or secondary derivative sub-system utilizing this v1 core fabric must also disclose its entire source code infrastructure to the public.*
 
-## 📊 Gate-Level Synthesis Results
-* **Slice LUTs:** Slice LUTs: 2 used
-* **Slice Registers:** Slice Registers: 1 Register
-* **DSP / Block RAM:** 0% (Pure sequential logic, no block RAM latency overhead)
-* 
-![Behavioral Verification Waveform](simulation_proof.png)
+---
 
-## 🔌 Hardware Interface & Pin Specifications
+## 💼 Upgrading to REIO-Chain v3 Enterprise (Premium)
 
-## 💻 Target Deployment Environments
+For enterprise-grade execution pipelines requiring native multi-lane scaling, dynamic runtime registers, and strict isolation from open-source copyleft constraints, engineering teams must upgrade to the **v3 Premium Architecture**.
 
-The synthesized netlist is fully portable and optimized for high-density bourses colocation architectures, targeting modern financial acceleration hardware:
-*   **AMD Xilinx Alveo Fabrics** (U50, U55C, U250)
-*   **Intel Stratix 10 / Agilex SmartNICs**
-*   **Arista EOS** programmable logic networks
+### 🚀 Premium Upgrades over v1:
+1. **Industry Protocols:** Full, native **AXI4-Stream** synchronization infrastructure (`tdata`, `tvalid`, `tready`).
+2. **Software Ecosystem (SDK):** Integrated bare-metal **Rust `no_std`** MMIO driver and **Zero-Overhead C++ FFI** runtime bindings.
+3. **Scientific Grounding:** Hardware execution layer natively modeling the paraconsistent trivalent logic (L3) registered under official **Zenodo DOI: 10.5281/zenodo.20743411**.
 
-## 💼 Evaluation Protocol
-The production VHDL source files and pre-compiled Out-of-Context Netlists (`.dcp`) are proprietary. Evaluation binary blocks are distributed exclusively under flat-fee **Site License** frameworks to sandbox environments upon validation of a unilateral Non-Disclosure Agreement (NDA).
+*To initiate an evaluation of the binarized v3 Premium sandbox or request a Commercial Proprietary Site License quote under the SMART Belgique legal framework, contact the system architect directly via private messaging.*
