@@ -1,4 +1,4 @@
-# REIO-Chain v3 Enterprise (SPU_103)
+# REIO-Chain (SPU_103)
 ### Nanosecond-Class L3 Network Interceptor & Trivalent Paradox Mitigation Engine
 
 
