@@ -1,7 +1,5 @@
 # ⚡ REIO-Chain: Ultra-Low Latency Co-Design Architecture Division
 
-[![DOI](https://zenodo.org)](https://zenodo.org)
-
 Official R&D repository showcasing the hardware implementation matrices of the **REIO-RFC-003 V3 Standard**. REIO-Chain is a proprietary, deterministic hardware/software Co-Design framework engineered for wire-speed network arbitration and line disconnection tailored for low-latency High-Frequency Trading (HFT) infrastructures.
 
 * **Scientific Specification:** [Read Paper on Zenodo](https://zenodo.org)
