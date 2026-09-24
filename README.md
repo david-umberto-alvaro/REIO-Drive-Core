@@ -27,5 +27,12 @@ The goal of this project is to model a minimal, low-footprint hardware disconnec
 
 This project is an open-source conceptual prototype and a demonstration of hardware/software co-design methodologies. The source code and reports are shared publicly to support my independent consulting services.
 
-* **Availability:** Available for freelance R&D, VHDL modeling, and firmware optimization services.
-* **Contract Administration:** Legal compliance and corporate billing are structured through the **SMART Belgique** framework.
+---
+
+## 💼 Availability & Professional Inquiries
+
+This repository serves as a technical showcase. I am available for high-end independent R&D consulting, custom RTL (VHDL/Verilog) modeling, and bare-metal Rust/C++ system integration.
+
+* 🇧🇪 **Location:** Brussels, Belgium (Available for remote and on-site contracts across Europe).
+* 👔 **Hire Me on Malt:** [View Professional Freelance Profile](https://fr.malt.be/profile/davidumbertoalvaro)
+* ⚖️ **Billing & Compliance:** Fully administered and legally insured via the **SMART Belgique** structural framework.
