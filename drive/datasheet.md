@@ -1,23 +1,28 @@
-# REIO-Drive (SPU_105) — Hardware Interface Datasheet
+# REIO-Drive (SPU_105) — Technical Datasheet & Product Brief
 
-## 🔌 Signal Specifications & I/O Mapping
+## 📋 1. Product Overview & Classifications
+REIO-Drive Core v1.0 is a safety-critical hardware-software guardrail designed to instantly isolate and mitigate malicious frame injections or data corruption on embedded networks.
+* **Functional Safety:** Designed for ISO 26262 ASIL-D and DO-254 compliance (SEooC - Safety Element out of Context).
+* **Testing Coverage:** 100% MC/CD (Modified Condition/Decision Coverage) validated via automated HDL testbenches.
 
-The SPU_105 core acts as a synchronous hardware guardrail between the vehicle's communication controller and the physical transceiver lines. It monitors bus activity at the clock cycle level to execute deterministic mitigation.
+---
 
-### 🎛️ Top-Level Entity Ports
+## 🔌 2. Signal Specifications & I/O Mapping (VHDL Component)
+
+The core acts as a synchronous hardware firewall blocking frame-level anomalies within 1 clock cycle.
 
 | Signal Name | Direction | Width (Bits) | Type | Description |
 | :--- | :--- | :--- | :--- | :--- |
 | `clk` | Input | 1 | `STD_LOGIC` | System Clock (100 MHz target for APB bus validation) |
 | `reset` | Input | 1 | `STD_LOGIC` | Asynchronous System Reset (Active High) |
-| `flux_data_in` | Input | 8 | `STD_LOGIC_VECTOR` | Parallel incoming frame payload byte from the network link |
-| `flux_valid_in` | Input | 1 | `STD_LOGIC` | Data valid strobe from the network transceiver layer |
-| `statut_securite` | Output | 1 | `STD_LOGIC` | Active high hardware status flag ('1' = Nominal, '0' = Attack intercepted / Isolated) |
-| `declencher_secours`| Output | 1 | `STD_LOGIC` | Critical safety override trigger output logic line ('1' = Active fail-safe deployment) |
+| `flux_data_in` | Input | 8 | `STD_LOGIC_VECTOR` | Parallel incoming frame payload byte from the transceiver |
+| `flux_valid_in` | Input | 1 | `STD_LOGIC` | Data valid strobe from physical layer |
+| `statut_securite` | Output | 1 | `STD_LOGIC` | Active high hardware status flag ('1' = Nominal, '0' = Isolated) |
+| `declencher_secours`| Output | 1 | `STD_LOGIC` | Critical safety override trigger output logic line ('1' = Active) |
 
 ---
 
-## ⚙️ Operational Logic & Invariant Bounds
+## ⚙️ 3. Operational Logic & Invariant Bounds
 
 ```text
     STIMULI TIMING CHRONOGRAM (RTL BEHAVIORAL VERIFICATION)
@@ -30,22 +35,26 @@ The SPU_105 core acts as a synchronous hardware guardrail between the vehicle's 
     DECLEN_SEC | 1           | 0            | 0            | 1 (EMERGENCY)
 ```
 
-### 1. Reset / Initialization Phase (0ns – 50ns)
-* While `reset` is held high, the circuit enforces a passive containment state. 
-* **Hardware Invariant:** `statut_securite` is forced to `'0'` and `declencher_secours` is asserted to `'1'`, preventing any unvalidated frame propagation during system boot.
-
-### 2. Transparent Nominal Stream Mode (50ns – 70ns)
-* Upon clearing `reset`, the arrival of standard network frames (e.g., `0xAA`) with active data strobes shifts the core into transparent throughput.
-* **Hardware Invariant:** `statut_securite` transitions to `'1'` and `declencher_secours` is pulled to `'0'`.
-
-### 3. Surgical Single-Cycle Interception (70ns – 80ns+)
-* The introduction of the critical entropy signature `0x7F` directly violates the bus integrity bounds.
-* On the immediate next **rising_edge(clk)**, the combinatorial matrix flags the payload.
-* **Hardware Invariant:** Within exactly **one clock cycle**, `statut_securite` drops to `'0'` (physical bus isolation) and `declencher_secours` rises to `'1'` to route backup instructions.
+### Phase Description:
+* **Initialization (0ns – 50ns):** While `reset` is active, the core forces safe system confinement (`statut_securite = '0'`, `declencher_secours = '1'`).
+* **Nominal Processing (50ns – 70ns):** Valid incoming data drives the system into functional state.
+* **Surgical Isolation (70ns – 80ns+):** Detection of the threat signature (`0x7F`) triggers full hardware disjunction in **exactly one clock cycle**.
 
 ---
 
-## 🛡️ Functional Safety Metrics (ISO 26262 ASIL-D Ready)
+## 💻 4. Software Control Plane (Rust Bare-Metal / C Bridge)
+* **Execution:** Zero dynamic allocation (`#[no_std]`, no heap), mathematical overflow protection against buffer overflows.
+* **Host Interfacing:** Integrated via the bilingual C-FFI header `reio_drive.h`. Requires only 5 lines of code within the client host's main execution loop.
 
-* **Determinism:** Absolute mitigation latency locked at exactly 1 clock period (10 ns at 100 MHz), completely agnostique of host processor software utilization or task queues.
-* **Fail-Safe Fallback:** Any loss of clock or internal parity mismatch within the Lockstep FSM array automatically drops the entity back into the default hardware state (`statut_securite = '0'`, `declencher_secours = '1'`).
+---
+
+## ⚖️ 5. Commercial B2B Licensing & Pricing Model (Europe / BeNeLux)
+
+The SPU_105 core architecture is available under three flexible B2B procurement models:
+
+* **Option 1: Software License (Fixed Fee) | €4,500 (One-time payment)**
+  * Includes the compiled standalone Rust library (`.a` / `.lib`), `reio_drive.h` header, and 30 days of integration support.
+* **Option 2: Core Hardware IP Source (Buyout) | €35,000 (Unlimited usage)**
+  * Includes full access to the encrypted proprietary VHDL source code `reio_drive_hardware.vhd`, automated Testbench scripts, and synthesis `.sdc` timing constraint templates.
+* **Option 3: Royalties / Volume Licensing | €150 / Machine / Year**
+  * Distributed deployment option backed by an active automated hardware validation license clock.
