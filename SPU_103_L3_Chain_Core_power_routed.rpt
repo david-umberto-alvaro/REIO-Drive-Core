@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
-| Date             : Fri Sep 25 13:34:01 2026
+| Date             : Fri Sep 25 17:52:29 2026
 | Host             : PC1-2D running 64-bit major release  (build 9200)
 | Command          : report_power -file SPU_103_L3_Chain_Core_power_routed.rpt -pb SPU_103_L3_Chain_Core_power_summary_routed.pb -rpx SPU_103_L3_Chain_Core_power_routed.rpx
 | Design           : SPU_103_L3_Chain_Core
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.060        |
+| Total On-Chip Power (W)  | 0.058        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.004        |
+| Dynamic (W)              | 0.001        |
 | Device Static (W)        | 0.056        |
 | Effective TJA (C/W)      | 6.2          |
 | Max Ambient (C)          | 99.6         |
@@ -52,15 +52,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      214 |       --- |             --- |
+| Clocks         |    <0.001 |        4 |       --- |             --- |
+| Slice Logic    |    <0.001 |      150 |       --- |             --- |
 |   CARRY4       |    <0.001 |       24 |      3650 |            0.66 |
-|   LUT as Logic |    <0.001 |       45 |      8000 |            0.56 |
-|   Register     |    <0.001 |      142 |     16000 |            0.89 |
+|   LUT as Logic |    <0.001 |       11 |      8000 |            0.14 |
+|   Register     |    <0.001 |      111 |     16000 |            0.69 |
 |   Others       |     0.000 |        2 |       --- |             --- |
-| Signals        |    <0.001 |      135 |       --- |             --- |
+| Signals        |    <0.001 |      137 |       --- |             --- |
 | Static Power   |     0.056 |          |           |                 |
-| Total          |     0.060 |          |           |                 |
+| Total          |     0.058 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,7 +70,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       0.900 |     0.008 |       0.004 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       0.900 |     0.005 |       0.001 |      0.004 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.009 |       0.000 |      0.009 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -123,11 +123,12 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+-------+--------+-----------------+
-| Clock | Domain | Constraint (ns) |
-+-------+--------+-----------------+
-| clk   | clk    |             2.5 |
-+-------+--------+-----------------+
++------------+------------+-----------------+
+| Clock      | Domain     | Constraint (ns) |
++------------+------------+-----------------+
+| phy_rx_clk | phy_rx_clk |             8.0 |
+| sys_clk    | clk        |             2.5 |
++------------+------------+-----------------+
 
 
 3. Detailed Reports
@@ -139,7 +140,7 @@ Table of Contents
 +-----------------------+-----------+
 | Name                  | Power (W) |
 +-----------------------+-----------+
-| SPU_103_L3_Chain_Core |     0.004 |
+| SPU_103_L3_Chain_Core |     0.001 |
 +-----------------------+-----------+
 
 
