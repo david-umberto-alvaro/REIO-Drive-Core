@@ -35,7 +35,7 @@ All metrics are hardware-verified through full placement and routing via AMD/Xil
 
 Derived from the static and dynamic vector analysis layout (`power_routed.rpt`):
 * **Total On-Chip Power Dissipation:** 0.060 W (60 mW)
-* **Core Logic Dynamic Power:** 0.003 W (3 mW)
+* **Core Logic Dynamic Power:** 0.004 W (4 mW)
 * **Device Static Power:** 0.056 W (56 mW)
 * **Junction Temperature:** 25.4°C (at 25.0°C Ambient)
 
