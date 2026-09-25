@@ -5,7 +5,7 @@ Bienvenue sur le dépôt principal du framework **REIO** (Reliable Embedded Inte
 ## 📑 1. Fondations Théoriques & Antériorité Scientifique
 
 Les concepts abstraits, invariants métalogiques et les règles de confinement paraconsistant qui gouvernent cet écosystème ont été officiellement archivés et gelés au niveau de la recherche académique :
-* **Spécification Fondamentale :
+- **Spécification Fondamentale :** REIO-RFC-003 (Spécification d'Architecture Méta-Logique)
 - **Publication Officielle :** Archivée de manière permanente sur [Zenodo (CERN)](https://zenodo.org/records/20743411).
 - **Certification d'Antériorité :** Adossée au DOI unique et immuable `10.5281/zenodo.20743411`.
 
@@ -29,6 +29,32 @@ Le framework est actuellement structuré autour de deux Proof of Concepts (PoC) 
 *   **Empreinte :** Optimisation extrême combinatoire pure (12 LUTs / 111 Registres), consommation dynamique de seulement **1 mW**.
 
 ---
+
+### 🌐 Architecture Globale du Framework
+
+
+                     [ REIO FRAMEWORK ]
+                             |
+                             v
+     +-----------------------------------------------+
+
+     |                   REIO-CORE                   |
+     |      (Spécification Théorique Initiale)       |
+     |   -> Archivé sur Zenodo avec son DOI unique   |
+     +-----------------------------------------------+
+                             |
+         +-------------------+-------------------+
+
+         |                                       |
+         v                                       v
++------------------------+              +------------------------+
+
+|       REIO-CHAIN       |              |       REIO-DRIVE       |
+|  (PoC Réseau - Impl.)  |              |   (PoC Auto - Impl.)   |
+|  -> Pipeline 64 bits   |              |  -> Mode Lockstep      |
+|  -> Cadencement 400 MHz|              |  -> Norme ISO 26262    |
++------------------------+              +------------------------+
+```
 
 ## ⚖️ 3. Mentions Légales & Propriété Intellectuelle (Proprietary Rights)
 
