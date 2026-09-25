@@ -11,32 +11,34 @@ Implementation and post-routing layout evaluations on the AMD/Xilinx Artix-7 fab
 - **Worst Hold Slack (WHS):** Fully optimized intra-site routing delays with strict positive hold time closure.
 - **Deterministic Mitigation Delay:** Single-cycle hardware disjunction execution (1 clock cycle latency).
 
-+-------------------------------------------------------+
+```text
++--------------------------------------------------------+
 
-|                   HOST APPLICATION                    |
-|  (AUTOSAR Environment / Vehicle Control Runtime)      |
-+-------------------------------------------------------+
-                           |
-                           | Native Integration Bridge
-                           v
-+-------------------------------------------------------+
+|                    APPLICATION HÔTE                    |
+|   (Environnement AUTOSAR / Calculateur de Véhicule)    |
++--------------------------------------------------------+
+                            |
+                            | Liaison Directe (C-FFI Bridge)
+                            v
++--------------------------------------------------------+
 
-|               HARDENED RUST CONTROLLER                |
-|  Register Auditing & License Time-Lock (#![no_std])   |
-+-------------------------------------------------------+
-                           |
-                           | AMBA APB Control Bus
-                           v
-+=======================================================+
+|                PILOTE DE CONTRÔLE RUST                 |
+|   Configuration MMIO & Verrou Temporel (#![no_std])    |
++--------------------------------------------------------+
+                            |
+                            | Bus de Contrôle AMBA APB
+                            v
++========================================================+
 
-|                       SILICIUM                        |
-| ----------------------------------------------------- |
-|               HARDWARE INTERCEPTOR RTL                |
-|      Surgical Bus Isolation & Lockstep FSM Core       |
-|                                                       |
-|        [Optimized Slice LUTs] [Registers]             |
-|        [Single-Cycle Mitigation] [Zero Violations]    |
-+=======================================================+
-                           ^
-                           | High-Speed Parallel Bus Intercept
-                    [ CAN / LIN BUS ]
+|                        SILICIUM                        |
+| ------------------------------------------------------ |
+|               DISJONCTEUR MATÉRIEL VHDL                |
+|      Isolation du Bus & Machine d'États Lockstep       |
+|                                                        |
+|   [Optimized Slice LUTs]          [Registers]          |
+|   [Single-Cycle Mitigation]       [Zero Violations]    |
++========================================================+
+                            ^
+                            | Interception Parallèle Haute Vitesse
+                            | [ BUS CAN / LIN ]
+```
