@@ -1,5 +1,5 @@
-# REIO-Chain — VHDL / Rust / C High-Speed Network Co-Design Portfolio
-### 400 MHz L3 Network Filter & Trivalent Paradox Mitigation Engine
+# REIO-Chain – Portfolio de co-conception réseau haute vitesse VHDL / Rust / C
+### Filtre réseau L3 400 MHz & Moteur d'atténuation de paradoxe trivalent
 
 ---
 
