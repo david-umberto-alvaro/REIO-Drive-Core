@@ -32,7 +32,7 @@ Le framework est actuellement structuré autour de deux Proof of Concepts (PoC) 
 
 ### 🌐 Architecture Globale du Framework
 
-
+```text
                      [ REIO FRAMEWORK ]
                              |
                              v
@@ -55,6 +55,7 @@ Le framework est actuellement structuré autour de deux Proof of Concepts (PoC) 
 |  -> Cadencement 400 MHz|              |  -> Norme ISO 26262    |
 +------------------------+              +------------------------+
 ```
+
 
 ## ⚖️ 3. Mentions Légales & Propriété Intellectuelle (Proprietary Rights)
 
