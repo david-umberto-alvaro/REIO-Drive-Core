@@ -96,10 +96,3 @@ Les rapports d'audit complets sont disponibles pour vérification :
 ## 6. CONDITIONS D'UTILISATION
 
 Ce projet est partagé en tant que **Portfolio Technique Personnel**. Le code source du cœur matériel VHDL et l'implémentation fine du pilote Rust sont protégés et exclus du dépôt public. Les droits d'examen sont limités à l'évaluation des architectures co-design et des rapports de métriques physiques associés.
-
-
----
-
-## 6. CONDITIONS D'UTILISATION
-
-Ce projet est partagé en tant que **Portfolio Technique Personnel**. Le code source du cœur matériel VHDL et l'implémentation fine du pilote Rust sont protégés et exclus du dépôt public. Les droits d'examen sont limités à l'évaluation des architectures co-design et des rapports de métriques physiques associés.
