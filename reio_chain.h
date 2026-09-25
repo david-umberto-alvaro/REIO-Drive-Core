@@ -1,4 +1,3 @@
-
 #ifndef REIO_CHAIN_H
 #define REIO_CHAIN_H
 
@@ -9,16 +8,18 @@
 extern "C" {
 #endif
 
+
+ */
 typedef struct __attribute__((aligned(32))) {
-    uint32_t clean_packets;
-    uint32_t anomaly_hits;
-    uint32_t soft_blocks;
-    uint32_t corruption_ratio_permille;
-    uint32_t critical_alert;
-    // Padding de synchronisation cache (12 octets réservés)
-    uint32_t _reserved0;
+    uint32_t clean_packets;           
+    uint32_t anomaly_hits;            
+    uint32_t soft_blocks;           
+    
+    
     uint32_t _reserved1;
     uint32_t _reserved2;
+    uint32_t _reserved3;
+    uint32_t _reserved4;
 } ReioForensicReport;
 
 
