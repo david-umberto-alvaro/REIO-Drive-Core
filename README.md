@@ -54,8 +54,8 @@ AXI4-Stream Inbound In ===> | [Intercepteur] -> [Kill-Switch] | ===> Out
              v [Axi-Lite MMIO Bus]       | [Override / Unmask]
        +-----------------------------------------------------------+
 
-       |     | Télémétrie 32-bit         | Registres de Contrôle    |
-       |     v                           v                          |
+       |     | Télémétrie 32-bit         | Registres de Contrôle   |
+       |     v                           v                         |
        |                                                           |
        |               Rust Control Plane (#[no_std])              |
        |               Interface C-FFI / Librairie C++             |
