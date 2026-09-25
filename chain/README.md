@@ -51,7 +51,7 @@ Les rapports d'implémentation post-placement-routage sur puce Xilinx Artix-7 (x
 
 ### 📊 Empreinte Géométrique & Signature Thermique
 
-![Chronogramme des formes d'ondes REIO-Chain](reio_simulation_waveform.png)
+![Chronogramme des formes d'ondes REIO-Chain](reio_chain_simulation_waveform.png)
 
 ### 📊 Empreinte Géométrique & Signature Thermique
 
