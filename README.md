@@ -1,5 +1,5 @@
 # REIO-Chain – Portfolio de co-conception réseau haute vitesse VHDL / Rust / C
-### Filtre réseau L3 400 MHz & Moteur d'atténuation de paradoxe trivalent
+### filtre de masquage synchrone ultra-minimaliste
 
 ---
 
