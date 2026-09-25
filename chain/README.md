@@ -49,10 +49,9 @@ Les rapports d'implémentation post-placement-routage sur puce Xilinx Artix-7 (x
                                            | [ LIGNE ETHERNET ]
 ```
 
-### 📊 Simulation
+### 📊 Validation Fonctionnelle & Formes d'Ondes (Testbench RTL)
 
-![### 📊 Validation Fonctionnelle & Formes d'Ondes (Testbench RTL)
-](reio_chain_simulation_waveform.png)
+![Chronogramme des formes d'ondes REIO-Chain](reio_chain_simulation_waveform.png)
 
 ### 📊 Empreinte Géométrique & Signature Thermique
 
