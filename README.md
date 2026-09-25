@@ -1,6 +1,8 @@
 # REIO-Chain – Portfolio de co-conception réseau haute vitesse VHDL / Rust / C
 ### Filtre réseau L3 400 MHz & Moteur d'atténuation de paradoxe trivalent
 
+[![DOI](https://zenodo.org)]([https://doi.org](https://zenodo.org/records/20743411))
+
 ---
 
 ## 1. PRÉSENTATION TECHNIQUE
