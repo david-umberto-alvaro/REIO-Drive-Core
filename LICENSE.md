@@ -1,6 +1,6 @@
 # ⚖️ REIO — Terms of Use & Intellectual Property Notice
 
-This repository houses the public technical certification, structural hardware reports, and mathematical validation files for the **REIO (SPU_103)** Intellectual Property (IP) Core.
+This repository houses the public technical certification, structural hardware reports, and mathematical validation files for the **REIO-CHAIN (SPU_103)** Intellectual Property (IP) Core.
 
 Source layouts (.vhd, .rs) are strictly proprietary and protected against exposure or modification by automated environment restrictions (.gitignore).
 
