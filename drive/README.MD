@@ -22,7 +22,7 @@ Implementation and post-routing layout evaluations on the AMD/Xilinx Artix-7 fab
 +-------------------------------------------------------+
 
 |               HARDENED RUST CONTROLLER                |
-|      Register Auditing & License Time-Lock (#![no_std]) |
+|  Register Auditing & License Time-Lock (#![no_std])   |
 +-------------------------------------------------------+
                            |
                            | AMBA APB Control Bus
