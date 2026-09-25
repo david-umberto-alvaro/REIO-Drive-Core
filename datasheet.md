@@ -1,7 +1,7 @@
 # TECHNICAL DATASHEET: REIO-Chain (SPU_103)
 ## VHDL Core & Bare-Metal Rust/C Control Plane Interface
 
-## Ultra-Low Latency L3 Network Interceptor & Trivalent Paradox Mitigation Core
+## Ultra-minimalist synchronous mask filter
 **Document Version:** 2026.3.2  
 **Classification:** Technical Portfolio / Open-Core Verification  
 **Core Architect:** David Umberto Alvaro  
