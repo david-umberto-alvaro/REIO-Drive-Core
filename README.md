@@ -18,12 +18,12 @@ Pour répondre aux contraintes micro-architecturales réelles du silicium et gar
 
 Le framework est actuellement structuré autour de deux Proof of Concepts (PoC) industriels majeurs :
 
-### 🚗 [Module 02 : REIO-Drive (SPU_105)](./drive)
+### 🚗 [REIO-Drive (SPU_105)](./drive)
 *   **Fonction :** Intercepteur déterministe et bouclier anti-injection pour bus multiplexés automobiles CAN/LIN.
 *   **Sûreté (ISO 26262) :** Architecture alignée sur les exigences critiques **ASIL-D** via une machine d'états redondante en mode **Lockstep** et bascule automatique en mode dégradé sécurisé (*Fail-Safe*).
 *   **Livrable Temporel :** Atténuation chirurgicale et isolation physique de la ligne de transmission exécutée en **exactement 1 cycle d'horloge unitaire** après détection du motif de menace.
 *   
-### ⛓️ [Module 01 : REIO-Chain (SPU_103)](./chain)
+### ⛓️ [REIO-Chain (SPU_103)](./chain)
 *   **Fonction :** Disjoncteur matériel et filtre d'interception réseau synchrone sur bus parallèle **64 bits**.
 *   **Métriques Vivado :** Cadencement du plan de contrôle à **400 MHz** (période de 2,5 ns) et de la ligne à 125 MHz. Timing Closure entièrement validé post-routage (**WNS : +1,596 ns**, **WHS : +0,142 ns**).
 *   **Empreinte :** Optimisation extrême combinatoire pure (12 LUTs / 111 Registres), consommation dynamique de seulement **1 mW**.
