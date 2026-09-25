@@ -89,7 +89,7 @@ Le comportement fonctionnel du circuit et sa réactivité face à une injection 
 L'intégralité des fichiers summaries bruts générés lors de la phase de routage et de synthèse physique est disponible en accès direct pour vérification technique des performances :
 
 * 📄 **[Rapport d'Utilisation Silicium (Utilization Report)](SPU_103_L3_Chain_Core_utilization_synth.rpt)** : Certification géométrique des 40 LUTs et 76 registres.
-* 📄 **[Rapport de Timing Temporel (Timing Summary)](SPU_103_L3_Chain_Core_timing_summary_routed.rpt)** : Validation officielle de la fermeture du timing à 400 MHz (WNS: +0,549 ns / TNS: 0,000 ns).
+* 📄 **[Rapport de Timing Temporel (Timing Summary)](SPU_103_L3_Chain_Core_timing_summary_routed.rpt)** : Validation de la fermeture du timing à 400 MHz (WNS: +0,549 ns / TNS: 0,000 ns).
 * 📄 **[Rapport de Puissance Énergétique (Power Report)](SPU_103_L3_Chain_Core_power_routed.rpt)** : Certification de la signature thermique à 60 mW.
 
 ---
