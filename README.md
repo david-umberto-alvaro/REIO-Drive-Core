@@ -15,6 +15,42 @@ Les rapports d'implémentation post-placement-routage sur puce Xilinx Artix-7 (x
 - **Worst Pulse Width Slack (WPWS) :** +0,750 ns
 - **Livrable Temporel :** Coupure réseau déterministe en 1 seul cycle machine
 
+- **Livrable Temporel :** Coupure réseau déterministe en 1 seul cycle machine
+
+```text
+               +-------------------------------------------------------+
+
+               |                  APPLICATION HÔTE                     |
+               | (Moteur C++ principal / Couche logicielle du client)  |
+               +-------------------------------------------------------+
+                                           |
+                                           | Liaison Directe (reio_chain.h)
+                                           v
+               +-------------------------------------------------------+
+
+               |                PILOTE DE CONTRÔLE RUST                |
+               |       Configuration MMIO & Télémétrie (#![no_std])    |
+               +-------------------------------------------------------+
+                                           |
+                                           | Bus de Contrôle AXI4-Lite
+                                           v
+               +=======================================================+
+
+               |                       SILICIUM                        |
+               |  ---------------------------------------------------  |
+               |              DISJONCTEUR MATÉRIEL VHDL                |
+               |         Confinement & Masquage Réseau (Artix-7)       |
+               |                                                       |
+               |   [46 Slice LUTs]                 [142 Registers]     |
+               |   [Horloge : 400 MHz]             [WNS : +0,246 ns]   |
+               +=======================================================+
+                                           ^
+                                           | Flux Réseau Linéaire AXI-Stream
+                                           | [ LIGNE ETHERNET ]
+```
+
+### 📊 Empreinte Géométrique & Signature Thermique
+
 ![Chronogramme des formes d'ondes REIO-Chain](reio_simulation_waveform.png)
 
 ### 📊 Empreinte Géométrique & Signature Thermique
