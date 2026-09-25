@@ -47,8 +47,7 @@ Les rapports d'implémentation post-placement-routage sur la matrice AMD/Xilinx 
 
 ### 📊 Validation Fonctionnelle & Formes d'Ondes (Testbench RTL)
 
-![Chronogramme des formes d'ondes REIO-Chain](reio_drive_simulation_waveform.png)
-
+![Chronogramme des formes d'ondes REIO-Chain](reio_drive_simulation.png)
 
 ### 📊 Empreinte Géométrique & Signature Thermique
 
