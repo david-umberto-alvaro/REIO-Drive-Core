@@ -20,16 +20,15 @@ Cette architecture démontre l'intégration verticale d'un circuit logique synth
 Les métriques suivantes sont extraites directement de l'implémentation physique finale (Routage complet) sous **AMD/Xilinx Vivado v2026.1**, en ciblant une matrice **Artix-7** (`xc7a12tlcpg238-2L`) configurée dans un profil de compilation virtuel *Out-of-Context* (OOC) :
 
 * **Fréquence d'Horloge Cible :** **400,000 MHz** (Période stricte de **2,500 ns**)
-* **Worst Negative Slack (WNS) :** **+0,549 ns** (Marge de Setup validée au vert)
-* **Total Negative Slack (TNS) :** **0,000 ns** (Zéro violation de chemin sur l'ensemble de la logique)
-* **Worst Hold Slack (WHS) :** **+0,228 ns** (Immunité complète contre les conditions de course)
-* **Worst Pulse Width Slack (WPWS) :** **+0,750 ns** (Fermeture parfaite de l'arbre d'horloge interne)
-* **Total Pulse Width Slack (TPWS) :** **0,000 ns** (Zéro gigue ou déformation d'impulsion)
+* **Worst Negative Slack (WNS) :** **+0,246 ns** (Marge de Setup validée au vert)
+* **Total Negative Slack (TNS) :** **0,000 ns** (Zéro violation de chemin)
+* **Worst Hold Slack (WHS) :** **+0,199 ns** (Immunité contre les conditions de course)
+* **Worst Pulse Width Slack (WPWS) :** **+0,750 ns** (Fermeture parfaite de l'arbre d'horloge)
+* **Total Pulse Width Slack (TPWS) :** **0,000 ns**
 
-### ⚡ Empreinte Logique & Profil Énergétique
-* **Ressources Utilisées :** **40 Slice LUTs** (0,50 %) et **76 Slice Registers** (0,48 %)
+### 📊 Empreinte Logique & Profil Énergétique
+* **Ressources Utilisées :** **46 Slice LUTs** (0,58 %) et **142 Slice Registers** (0,89 %)
 * **Puissance Totale Dissipée (On-Chip) :** **0,060 W** (60 mW)
-* **Consommation Dynamique du Cœur :** **0,003 W** (3 mW)
 
 ![Chronogramme des formes d'ondes REIO-Chain](reio_simulation_waveform.png)
 
