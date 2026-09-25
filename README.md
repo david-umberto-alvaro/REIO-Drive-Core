@@ -39,7 +39,7 @@ Les métriques suivantes sont extraites directement de l'implémentation physiqu
 
 L'infrastructure isole strictement le flux réseau ultra-rapide des commandes logicielles asynchrones pour garantir un traitement déterministe sans compromettre le timing.
 
-```text
+```
        +-----------------------------------------------------------+
 
        |                                                           |
