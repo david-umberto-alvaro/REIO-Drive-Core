@@ -30,10 +30,10 @@ Le framework est actuellement structuré autour de deux Proof of Concepts (PoC) 
 
 ---
 
-## ⚖️ 3. Mentions Légales & Propriété Intellectuelle
+## ⚖️ 3. Mentions Légales & Propriété Intellectuelle (Proprietary Rights)
 
-Conformément aux clauses de protection exclusive de notre modèle "Jardin Secret", les fichiers de code source d'origine (`.vhd`, `.rs`) sont protégés contre toute extraction ou exposition publique par des restrictions d'environnement strictes (`.gitignore`). 
+Conformément aux clauses de protection exclusive de notre modèle de distribution "Closed-Source / Restricted Access", les architectures logiques, l'implémentation algorithmique fine et les fichiers sources d'origine (`.vhd`, `.rs`) restent strictement propriétaires et confidentiels. Ces éléments sont protégés contre toute extraction, modification ou exposition publique par des restrictions d'environnement automatisées (`.gitignore`).
 
-Le public, les auditeurs et les directeurs techniques (CTO) disposent d'un accès libre pour analyser les rapports physiques de compilation CAO post-routage (`.rpt`), les bilans de puissance thermique, les chronogrammes de simulation fonctionnelle ainsi que les interfaces d'en-tête C-FFI (`reio_chain.h` / `reio_drive.h`).
+Le public, les auditeurs techniques et les directeurs de l'ingénierie (CTO) disposent d'un droit d'accès libre pour auditer exclusivement les livrables physiques de validation : rapports CAO post-routage d'utilisation des ressources (`.rpt`), bilans de puissance thermique, chronogrammes de simulation fonctionnelle, ainsi que les interfaces d'en-tête C-FFI standardisées (`reio_chain.h` / `reio_drive.h`).
 
-*Pour toute demande de licence commerciale (Option Logicielle B2B ou Rachat complet des droits d'IP Source), d'audit architectural ou d'intégration sur mesure, veuillez contacter l'architecte matériel via les canaux professionnels de messagerie.*
+*Pour toute demande de licence d'exploitation commerciale (Option logicielle bilingue ou rachat complet des droits de Propriété Intellectuelle source), d'audit d'architecture approfondi ou d'intégration sur mesure au sein de vos systèmes embarqués, veuillez soumettre une demande officielle auprès de l'architecte matériel via les canaux professionnels de messagerie.*
