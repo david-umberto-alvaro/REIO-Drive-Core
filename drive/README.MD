@@ -45,6 +45,11 @@ Les rapports d'implémentation post-placement-routage sur la matrice AMD/Xilinx 
                             | [ BUS CAN / LIN ]
 ```
 
+### 📊 Validation Fonctionnelle & Formes d'Ondes (Testbench RTL)
+
+![Chronogramme des formes d'ondes REIO-Chain](reio_drive_simulation_waveform.png)
+
+
 ### 📊 Empreinte Géométrique & Signature Thermique
 
 * **Utilisation des ressources logiques :** Empreinte matérielle ultra-compacte optimisée via la fusion de LUTs et le regroupement natif en Slices.
