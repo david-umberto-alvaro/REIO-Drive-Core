@@ -10,7 +10,7 @@
 
 ## 1. EXECUTIVE OVERVIEW
 
-The **REIO-Chain v3 Enterprise (SPU_103)** is a hardware-proven, nanosecond-class Intellectual Property (IP) block designed for wire-speed Layer 3 (L3) packet interception, decoding, and deterministic mitigation. It features a native **Trivalent Logic Engine** implemented under aerospace-grade constraints and a memory-mapped, bare-metal **Rust control plane**.
+The **REIO-Chain (SPU_103)** is a hardware-proven, nanosecond-class Intellectual Property (IP) block designed for wire-speed Layer 3 (L3) packet interception, decoding, and deterministic mitigation. It features a native **Trivalent Logic Engine** implemented under aerospace-grade constraints and a memory-mapped, bare-metal **Rust control plane**.
 
 ---
 
