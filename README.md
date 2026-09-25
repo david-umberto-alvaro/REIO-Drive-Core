@@ -9,7 +9,7 @@
 
 ## 1. PRÉSENTATION TECHNIQUE
 
-Le **REIO-Chain (SPU_103)** est un Proof of Concept (PoC) fonctionnel de co-design matériel/logiciel (Hardware/Software Co-design) dédié à l'interception chirurgicale de paquets Réseau Couche 3 (L3) et à la mitigation déterministe d'anomalies de flux à très haute fréquence.
+Le **REIO-Chain (SPU_103)** est un Proof of Concept (PoC) fonctionnel de co-design matériel/logiciel (Hardware/Software Co-design) dédié à l'interception chirurgicale de paquets Réseau et à la mitigation déterministe d'anomalies de flux à très haute fréquence.
 
 Cette architecture démontre l'intégration verticale d'un circuit logique synthétisé sous Vivado et d'un plan de contrôle logiciel bas niveau écrit en **Rust moderne (Édition 2024 bare-metal)**, fonctionnant de manière synchrone en **1 seul cycle d'horloge (2,5 ns)**.
 
