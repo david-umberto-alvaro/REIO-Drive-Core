@@ -19,22 +19,15 @@ The **REIO-Chain v3 Enterprise (SPU_103)** is a hardware-proven, nanosecond-clas
 All metrics are hardware-verified through full placement and routing via AMD/Xilinx Vivado v2026.1 targeting an Artix-7 fabric in an Out-of-Context (OOC) structural compilation profile.
 
 * **Target Clock Frequency:** 400.000 MHz (Clock Period: 2.500 ns)
-* **Worst Negative Slack (WNS):** +0.549 ns (Setup time fully met)
-* **Total Negative Slack (TNS):** 0.000 ns (Zero routing path failures)
-* **Worst Hold Slack (WHS):** +0.228 ns (Complete race-condition immunity)
-* **Worst Pulse Width Slack (WPWS):** +0.750 ns (Zero clock asymmetry or jitter distortion)
-* **Total Pulse Width Slack (TPWS):** 0.000 ns (Complete clock tree integrity)
-* **Mitigation Latency:** Hardware-deterministic 1 Clock Cycle (2.5 ns)
-
----
+* **Worst Negative Slack (WNS):** +0.246 ns
+* **Worst Hold Slack (WHS):** +0.199 ns
+* **Worst Pulse Width Slack (WPWS):** +0.750 ns
+* **Total Pulse Width Slack (TPWS):** 0.000 ns
 
 ## 3. RESOURCE UTILIZATION PROFILE
-
-Derived from the post-synthesis routing netlist framework (`utilization_synth.rpt`):
-* **Slice LUTs (as Logic):** 40 (0.50% of xc7a12t fabric)
-* **Slice Registers (as Flip-Flops):** 76 (0.48% of xc7a12t fabric)
-* **Unique Control Sets:** 2
-* **Hardware Primitives utilized:** FDCE (76), LUT2 (34), CARRY4 (8), LUT6 (2), LUT3 (2), LUT1 (2)
+* **Slice LUTs (as Logic):** 46 (0.58% of xc7a12t fabric)
+* **Slice Registers (as Flip-Flops):** 142 (0.89% of xc7a12t fabric)
+* **Hardware Primitives utilized:** FDCE (142), LUT2 (35), CARRY4 (24), LUT1 (4), LUT3 (3), LUT4 (2), LUT6 (1), LUT5 (1)
 
 ---
 
