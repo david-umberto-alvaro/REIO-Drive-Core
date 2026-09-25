@@ -31,6 +31,8 @@ Les métriques suivantes sont extraites directement de l'implémentation physiqu
 * **Puissance Totale Dissipée (On-Chip) :** **0,060 W** (60 mW)
 * **Consommation Dynamique du Cœur :** **0,003 W** (3 mW)
 
+![Chronogramme des formes d'ondes REIO-Chain](reio_simulation_waveform.png)
+
 ---
 
 ## 3. ARCHITECTURE DU CO-DESIGN
