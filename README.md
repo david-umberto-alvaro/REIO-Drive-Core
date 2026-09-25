@@ -1,94 +1,34 @@
-# REIO-Chain – Portfolio de co-conception réseau haute vitesse VHDL / Rust / C
-### filtre de masquage synchrone ultra-minimaliste
+# REIO-Chain (SPU_103)
 
----
+## Filtre Synchrone d'Interception Réseau & Disjoncteur Matériel (125 MHz / 400 MHz)
 
-## 1. PRÉSENTATION TECHNIQUE
+REIO-Chain (SPU_103) est un bloc de propriété intellectuelle (IP Core) matériel/logiciel ultra-compact conçu pour l'interception linéaire et le masquage déterministe de flux de données Couche 3 (Layer 3). L'architecture est scindée en un plan de filtrage physique asynchrone cadencé à 125 MHz et un plan de contrôle bare-metal supervisé à 400 MHz.
 
-Le **REIO-Chain (SPU_103)** est un Proof of Concept (PoC) fonctionnel de co-design matériel/logiciel (Hardware/Software Co-design) dédié à l'interception chirurgicale de paquets Réseau et à la mitigation déterministe d'anomalies de flux à très haute fréquence.
+### 🔬 Performances Matérielles Certifiées (AMD/Xilinx Vivado v2026.1)
 
-Cette architecture démontre l'intégration verticale d'un circuit logique synthétisé sous Vivado et d'un plan de contrôle logiciel bas niveau écrit en **Rust moderne (Édition 2024 bare-metal)**, fonctionnant de manière synchrone en **1 seul cycle d'horloge (2,5 ns)**.
+Les rapports d'implémentation post-placement-routage sur puce Xilinx Artix-7 (xc7a12tlcpg238-2L) certifient les métriques physiques suivantes :
 
----
-
-## 2. PERFORMANCES SILICIUM CERTIFIÉES
-
-Les métriques suivantes sont extraites directement de l'implémentation physique finale (Routage complet) sous **AMD/Xilinx Vivado v2026.1**, en ciblant une matrice **Artix-7** (`xc7a12tlcpg238-2L`) configurée dans un profil de compilation virtuel *Out-of-Context* (OOC) :
-
-* **Fréquence d'Horloge Cible :** **400,000 MHz** (Période stricte de **2,500 ns**)
-* **Worst Negative Slack (WNS) :** **+0,246 ns** (Marge de Setup validée au vert)
-* **Total Negative Slack (TNS) :** **0,000 ns** (Zéro violation de chemin)
-* **Worst Hold Slack (WHS) :** **+0,199 ns** (Immunité contre les conditions de course)
-* **Worst Pulse Width Slack (WPWS) :** **+0,750 ns** (Fermeture parfaite de l'arbre d'horloge)
-* **Total Pulse Width Slack (TPWS) :** **0,000 ns**
-
-### 📊 Empreinte Logique & Profil Énergétique
-* **Ressources Utilisées :** **46 Slice LUTs** (0,58 %) et **142 Slice Registers** (0,89 %)
-* **Puissance Totale Dissipée (On-Chip) :** **0,060 W** (60 mW)
+- **Fréquence Horloge Système (Rust) :** 400 MHz (Période stricte de 2,5 ns)
+- **Fréquence Horloge Ligne (Ethernet) :** 125 MHz (Période stricte de 8,0 ns)
+- **Worst Negative Slack (WNS) :** +1,596 ns (Setup métrique parfait, zéro violation)
+- **Total Negative Slack (TNS) :** 0,000 ns
+- **Worst Pulse Width Slack (WPWS) :** +0,750 ns
+- **Livrable Temporel :** Coupure réseau déterministe en 1 seul cycle machine
 
 ![Chronogramme des formes d'ondes REIO-Chain](reio_simulation_waveform.png)
 
----
+### 📊 Empreinte Géométrique & Signature Thermique
 
-## 3. ARCHITECTURE DU CO-DESIGN
+- **Slice LUTs :** 12 (0,15% du composant)
+- **Slice Registers :** 111 (0,69% du composant)
+- **Primitives Hardware :** 111 FDCE flip-flops, 24 blocs CARRY4
+- **Puissance Électrique Totale :** 58 mW (Puissance dynamique active du cœur : 1 mW)
+- **I/O Physiques :** Configuration d'entrées/sorties routées sous contrainte de délai LVCMOS33
 
-L'infrastructure isole strictement le flux réseau ultra-rapide des commandes logicielles asynchrones pour garantir un traitement déterministe sans compromettre le timing.
+### 🛠️ Architecture du Framework Unifié
 
-```
-       +-----------------------------------------------------------+
+1. **RTL Core (VHDL) :** Pipeline d'interception directe parallèle s'interfaçant avec un bus physique Ethernet. Intègre un bloc de protection contre les inversions d'états, un disjoncteur matériel à verrouillage et une matrice de Télémétrie Multi-Secteurs synchrone.
+2. **Control Plane (Rust 2024) :** Pilote autonome s'exécutant sous contraintes strictes `![no_std]`, effectuant des lectures directes et volatiles par mappage mémoire MMIO, calculant les ratios de corruption en arithmétique entière fixe.
+3. **Host Interface (C-FFI) :** Exportation des bindings via un en-tête C (`reio_chain.h`) exploitant des structures unifiées et alignées à 32 octets sur les lignes de cache CPU.
 
-       |                                                           |
-       |                  REIO-Chain Core Module                   |
-       |                                                           |
-       +-----------------------------------------------------------+
-AXI4-Stream Inbound In ===> | [Intercepteur] -> [Kill-Switch] | ===> Out
-       +-----------------------------------------------------------+
-             |                           ^
-
-             |                           |
-             v [Axi-Lite MMIO Bus]       | [Override / Unmask]
-       +-----------------------------------------------------------+
-
-       |     | Télémétrie 32-bit         | Registres de Contrôle   |
-       |     v                           v                         |
-       |                                                           |
-       |               Rust Control Plane (#[no_std])              |
-       |               Interface C-FFI / Librairie C++             |
-       |                                                           |
-       +-----------------------------------------------------------+
-```
-
-### 🧬 Moteur de Logique Trivalente & Anti-Glitch
-Le circuit évalue les vecteurs réseau entrants en appliquant des règles inspirées de l'algèbre paraconsistante de Lukasiewicz, forçant le flux dans des états explicites (`STATE_NEUTRAL`, `STATE_ACTIVE`, `STATE_GROUND`, `STATE_INVALID`). 
-Toute transition interdite ou corrompue lève instantanément un registre de verrouillage synchrone tampon (`r_latch_state`). Ce disjoncteur matériel isole le bus de sortie en bloquant les données à `00000000` en moins de 2,5 ns.
-
-### 🛡️ Robustesse Matérielle & Métastabilité
-* **Protection Asynchrone :** Les masques injectés par le pilote Rust traversent un arbre de synchronisation séquentiel à 2 étages durci par des directives de placement `ASYNC_REG`.
-* **Précision Temporelle :** L'arbre d'horloge interne est stabilisé pour garantir une intégrité totale du signal à 400 MHz, éliminant toute distorsion physique sur les bascules de capture.
-
-### 🦀 Pilote Bare-Metal Rust 2024
-Le plan de contrôle est géré par une bibliothèque système autonome construite en `#![no_std]` pour la cible `thumbv7m-none-eabi`. L'envoi des masques s'exécute via des pointeurs `write_volatile` atomiques alignés sur 32 bits, et un `#[panic_handler]` personnalisé sécurise le comportement logiciel en cas d'anomalie d'exécution.
-
----
-
-## 4. CHRONOGRAMME DE SIMULATION MATÉRIELLE
-
-Le comportement fonctionnel du circuit et sa réactivité face à une injection de paquets corrompus ont été validés par simulation comportementale. Le chronogramme complet montre l'activation immédiate du Kill-Switch matériel (`tb_assert_mitigation`) et la capture synchrone de la télémétrie par la variable logicielle Rust :
-
-📸 **[Consulter le Chronogramme des Formes d'Ondes (Waveform)](reio_simulation_waveform.png)**
-
----
-
-## 5. RAPPORTS D'AUDIT COMPILATEUR (VIVADO)
-
-Les rapports d'audit complets sont disponibles pour vérification :
-
-- 📄 **[Rapport d'Utilisation Silicium (Utilization Report)](SPU_103_L3_Chain_Core_utilization_synth.rpt)** : Certification géométrique (46 LUTs, 142 registres).
-- 📄 **[Rapport de Timing Temporel (Timing Summary)](SPU_103_L3_Chain_Core_timing_summary_routed.rpt)** : Validation du timing (WNS: +0,246 ns / TNS: 0,000 ns).
-- 📄 **[Rapport de Puissance Énergétique (Power Report)](SPU_103_L3_Chain_Core_power_routed.rpt)** : Certification thermique (60 mW).
-
----
-
-## 6. CONDITIONS D'UTILISATION
-
-Ce projet est partagé en tant que **Portfolio Technique Personnel**. Le code source du cœur matériel VHDL et l'implémentation fine du pilote Rust sont protégés et exclus du dépôt public. Les droits d'examen sont limités à l'évaluation des architectures co-design et des rapports de métriques physiques associés.
+*Conformément aux clauses de propriété intellectuelle, les codes sources restent confidentiels. Les rapports de compilation CAO d'utilisation (`.rpt`), de puissance et les chronogrammes de simulation comportementale sont accessibles en Open-Core.*
