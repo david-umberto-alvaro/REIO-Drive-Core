@@ -59,5 +59,4 @@ Ce dépôt sert de portfolio technique.
 ### Accès Libre :
 * `reio_chain.h`, `AI_METHODOLOGY.md` et rapports Vivado.
 
-### Code Source (`.vhd`, `.rs`) :
-Le code source brut est restreint pour protéger la propriété intellectuelle
+*⚖️ Conformément aux clauses de propriété intellectuelle et de confidentialité, les fichiers de code source (.vhd, .rs) restent strictement confidentiels. Les rapports physiques d'utilisation CAO (.rpt), les résumés des contraintes de timing et les chronogrammes de simulation comportementale sont accessibles en Open-Core.*
