@@ -8,10 +8,10 @@ REIO-Drive (SPU_105) est un bloc de propriété intellectuelle (IP Core) matéri
 
 Les rapports d'implémentation post-placement-routage sur la matrice AMD/Xilinx Artix-7 certifient les métriques physiques et de sûreté suivantes :
 
-- **Fréquence Horloge Système (Rust) :** Chemin de timing fermé avec succès sous des contraintes de haute fréquence agressives.
-- **Worst Negative Slack (WNS) :** Entièrement stabilisé dans le vert avec des marges de sécurité robustes et zéro violation de chemin.
-- **Worst Hold Slack (WHS) :** Délais de routage intra-site parfaitement optimisés avec une fermeture stricte du hold positif.
-- **Livrable Temporel :** Coupure réseau déterministe en 1 seul cycle machine (latence d'un cycle d'horloge).
+- **Fréquence Horloge Système (Rust) :** Chemin de timing fermé avec succès à **100.00 MHz** (Période : **10.00 ns**).
+- **Worst Negative Slack (WNS) :** Entièrement stabilisé dans le vert à **+7.606 ns** (Zéro violation de chemin).
+- **Worst Hold Slack (WHS) :** Délais de routage intra-site parfaitement optimisés à **+0.279 ns**.
+- **Livrable Temporel :** Coupure réseau déterministe en **1 seul cycle machine** (latence d'un cycle d'horloge).
 
 ```text
 +--------------------------------------------------------+
@@ -51,10 +51,10 @@ Les rapports d'implémentation post-placement-routage sur la matrice AMD/Xilinx 
 
 ### 📊 Empreinte Géométrique & Signature Thermique
 
-* **Utilisation des ressources logiques :** Empreinte matérielle ultra-compacte optimisée via la fusion de LUTs et le regroupement natif en Slices.
-* **Primitives Hardware :** Bascules synchrones couplées à des macros logiques d'arithmétique rapide (`CARRY4`).
-* **Puissance Électrique Totale :** Consommation dynamique active optimisée au maximum en réduisant le taux de commutation des registres inactifs.
-* **I/O Physiques :** Configuration des ports de données et de contrôle routés sous des contraintes électriques et de tension strictes.
+- **Utilisation des ressources logiques :** Empreinte matérielle ultra-compacte validée à **6 Slice LUTs** (0.03% de la matrice) et **4 Slice Registers** (<0.01%).
+- **Primitives Hardware :** Bascules synchrones (`FDRE`/`FDSE`) couplées à des macros logiques d'optimisation.
+- **Puissance Électrique Totale :** Consommation statique fixe mesurée à **72 mW** (`Device Static Power`), avec une dissipation active du cœur dynamique inférieure à **1 mW**.
+- **I/O Physiques :** Configuration de **13 broches physiques** (11 ports d'entrée `IBUF`, 2 ports de sortie `OBUF`) routées sous des contraintes électriques strictes.
 
 ### 🛠 Architecture du Framework Unifié
 
