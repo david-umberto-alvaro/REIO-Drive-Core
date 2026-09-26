@@ -28,29 +28,27 @@ Deux Proof of Concepts (PoC) en **VHDL** et **Rust/C FFI** ont été synthétis�
 ### 🌐 Architecture Globale du Framework
 
 ```text
-               [ REIO FRAMEWORK ]
-                       |
-                       v
-+-----------------------------------------------+
+                     [ REIO FRAMEWORK ]
+                             |
+                             v
+     +-----------------------------------------------+
 
-|                   REIO-CORE                   |
-|      (Spécification Théorique Initiale)       |
-|   -> Archivé sur Zenodo avec son DOI unique   |
-+-----------------------------------------------+
+     |                   REIO-CORE                   |
+     |      (Spécification Théorique Initiale)       |
+     |   -> Archivé sur Zenodo avec son DOI unique   |
+     +-----------------------------------------------+
+                             |
+         +-------------------+-------------------+
 
-       |                               |
-       +---------------+---------------+
-                       |
-              +--------+--------+
-              v                 v
-+------------------------+ +------------------------+
+         |                                       |
+         v                                       v
++------------------------+              +------------------------+
 
-|       REIO-CHAIN       | |       REIO-DRIVE       |
-|  (PoC Réseau - Impl.)  | |   (PoC Auto - Impl.)   |
-| -> Pipeline 64 bits    | | -> Mode Lockstep       |
-| -> Cadencement 400 MHz | | -> Norme ISO 26262     |
-+------------------------+ +------------------------+
-
+|       REIO-CHAIN       |              |       REIO-DRIVE       |
+|  (PoC Réseau - Impl.)  |              |   (PoC Auto - Impl.)   |
+|  -> Pipeline 64 bits   |              |  -> Mode Lockstep      |
+|  -> Cadencement 400 MHz|              |  -> Norme ISO 26262    |
++------------------------+              +------------------------+
 ```
 
 ## 📦 3. Structure du Dépôt & Politique d'Accès
