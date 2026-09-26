@@ -1,4 +1,4 @@
-# REIO-Chain (SPU_103)
+# ⛓️ REIO-Chain (SPU_103)
 
 ## Filtre Synchrone d'Interception Réseau & Disjoncteur Matériel (125 MHz / 400 MHz)
 
@@ -15,40 +15,41 @@ Les rapports d'implémentation post-placement-routage sur puce Xilinx Artix-7 (x
 - **Worst Pulse Width Slack (WPWS) :** +0,750 ns
 - **Livrable Temporel :** Coupure réseau déterministe en 1 seul cycle machine
 
-
 ```text
-               +-------------------------------------------------------+
++-------------------------------------------------------+
 
-               |                  APPLICATION HÔTE                     |
-               | (Moteur C++ principal / Couche logicielle du client)  |
-               +-------------------------------------------------------+
-                                           |
-                                           | Liaison Directe (reio_chain.h)
-                                           v
-               +-------------------------------------------------------+
+|                   APPLICATION HÔTE                    |
+| (Moteur C++ principal / Couche logicielle du client)  |
++-------------------------------------------------------+
+                           |
+                           | Liaison Directe (reio_chain.h)
+                           v
++-------------------------------------------------------+
 
-               |                PILOTE DE CONTRÔLE RUST                |
-               |       Configuration MMIO & Télémétrie (#![no_std])    |
-               +-------------------------------------------------------+
-                                           |
-                                           | Bus de Contrôle AXI4-Lite
-                                           v
-               +=======================================================+
+|                PILOTE DE CONTRÔLE RUST                |
+|     Configuration MMIO & Télémétrie (#![no_std])      |
++-------------------------------------------------------+
+                           |
+                           | Bus de Contrôle AXI4-Lite
+                           v
++=======================================================+
 
-               |                       SILICIUM                        |
-               |  ---------------------------------------------------  |
-               |              DISJONCTEUR MATÉRIEL VHDL                |
-               |         Confinement & Masquage Réseau (Artix-7)       |
-               |                                                       |
-               |   [46 Slice LUTs]                 [142 Registers]     |
-               |   [Horloge : 400 MHz]             [WNS : +0,246 ns]   |
-               +=======================================================+
-                                           ^
-                                           | Flux Réseau Linéaire AXI-Stream
-                                           | [ LIGNE ETHERNET ]
+|                       SILICIUM                        |
+| ---------------------------------------------------   |
+|               DISJONCTEUR MATÉRIEL VHDL               |
+|        Confinement & Masquage Réseau (Artix-7)        |
+|                                                       |
+|   [12 Slice LUTs]                 [111 Registers]     |
+|   [Horloge : 400 MHz]             [WNS : +1,596 ns]   |
++=======================================================+
+                           ^
+                           | Flux Réseau Linéaire AXI-Stream
+                    [ LIGNE ETHERNET ]
 ```
 
 ### 📊 Validation Fonctionnelle & Formes d'Ondes (Testbench RTL)
+
+Chronogramme des formes d'ondes REIO-Chain
 
 ![Chronogramme des formes d'ondes REIO-Chain](reio_chain_simulation_waveform.png)
 
@@ -60,7 +61,7 @@ Les rapports d'implémentation post-placement-routage sur puce Xilinx Artix-7 (x
 - **Puissance Électrique Totale :** 58 mW (Puissance dynamique active du cœur : 1 mW)
 - **I/O Physiques :** Configuration d'entrées/sorties routées sous contrainte de délai LVCMOS33
 
-### 🛠️ Architecture du Framework Unifié
+### 🛠 Architecture du Framework Unifié
 
 1. **RTL Core (VHDL) :** Pipeline d'interception directe parallèle s'interfaçant avec un bus physique Ethernet. Intègre un bloc de protection contre les inversions d'états, un disjoncteur matériel à verrouillage et une matrice de Télémétrie Multi-Secteurs synchrone.
 2. **Control Plane (Rust 2024) :** Pilote autonome s'exécutant sous contraintes strictes `![no_std]`, effectuant des lectures directes et volatiles par mappage mémoire MMIO, calculant les ratios de corruption en arithmétique entière fixe.
