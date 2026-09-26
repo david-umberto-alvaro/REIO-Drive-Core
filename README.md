@@ -49,6 +49,7 @@ Deux Proof of Concepts (PoC) en **VHDL** et **Rust/C FFI** ont été synthétis�
 |  -> Pipeline 64 bits   |              |  -> Mode Lockstep      |
 |  -> Cadencement 400 MHz|              |  -> Norme ISO 26262    |
 +------------------------+              +------------------------+
+
 ```
 
 ## 📦 3. Structure du Dépôt & Politique d'Accès
