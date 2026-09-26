@@ -60,5 +60,4 @@ Ce dépôt sert de portfolio technique.
 * `reio_chain.h`, `AI_METHODOLOGY.md` et rapports Vivado.
 
 ### Code Source (`.vhd`, `.rs`) :
-Le code source brut est restreint pour protéger la propriété intellectuelle.
-* **Contact :** Demande d'accès via [LinkedIn](https://linkedin.com).
+Le code source brut est restreint pour protéger la propriété intellectuelle
