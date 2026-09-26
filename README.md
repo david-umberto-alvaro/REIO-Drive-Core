@@ -1,37 +1,37 @@
-# REIO — Portfolio de Prototypage Hardware & Co-Design
+# REIO — Framework de Co-Design Hardware/Software pour la Sûreté des Systèmes Embarqués
 
-Bienvenue sur mon portfolio technique. Ce dépôt rassemble mes maquettes fonctionnelles, mes architectures de co-design et mes rapports de validation physique post-routage sous AMD/Xilinx Vivado (VHDL + Rust Bare-Metal #[no_std] / C FFI).
+## 🔬 1. Positionnement Scientifique & Recherche Académique
+
+Le framework **REIO** (*Reliable Embedded Interception Operations*) relie méthodes formelles et contraintes physiques (FPGA). 
+
+### Fondations Théoriques
+Les mécanismes s'appuient sur la **logique paraconsistante** et les FSM pour garantir un comportement déterministe malgré les fautes (*bit-flips*).
+* **Référence Académique :** Thèse et spécifications sur **Zenodo** : `[Insère ton lien Zenodo ici ou ton vrai DOI]`
 
 ---
 
-## 🛠️ 1. Réalisations Matérielles & Validations Physiques (PoC Portfolio)
+## 🛠️ 2. Implémentation Physique & Métriques Vivado (PoC)
 
-Toutes les architectures présentées ont été entièrement synthétisées, placées et routées sur cible matérielle AMD/Xilinx Artix-7 (Mode Out-of-Context) :
+Deux Proof of Concepts (PoC) en **VHDL** et **Rust/C FFI** ont été synthétisés sur cible **AMD/Xilinx Artix-7**.
 
 ### 🚗 [REIO-Drive (SPU_105)](./drive)
-- **Fonction :** Maquette d'un intercepteur et bouclier de sécurité pour bus multiplexés automobiles CAN/LIN.
-- **Sûreté :** Architecture intégrant une machine d'états redondante en mode Lockstep avec bascule en mode dégradé sécurisé (Fail-Safe).
-- **Validation Temporelle :** Routage physique entièrement validé à 100 MHz (Worst Negative Slack : +7,606 ns, Worst Hold Slack : +0,279 ns). Interception exécutée en exactement 1 cycle d'horloge.
+* **Fonction :** Bouclier pour bus CAN/LIN.
+* **Sûreté (ISO 26262) :** Aligné ASIL-D (Lockstep, mode *Fail-Safe*).
+* **Validation :** Validé à 100 MHz (WNS : +7,606 ns, WHS : +0,279 ns). Interception en 1 cycle.
 
 ### ⛓️ [REIO-Chain (SPU_103)](./chain)
-- **Fonction :** Maquette d'un disjoncteur matériel et filtre d'interception réseau synchrone sur bus parallèle 64 bits.
-- **Validation Temporelle :** Cadencement cible stabilisé à 400 MHz (période de 2,5 ns). Timing Closure entièrement validé post-routage (WNS : +1,596 ns, WHS : +0,142 ns).
-- **Ressources :** Optimisation extrême combinatoire pure (12 LUTs / 111 Registres) pour une consommation dynamique active du cœur isolée à 1 mW.
+* **Fonction :** Disjoncteur matériel sur bus 64 bits.
+* **Validation :** Cible à 400 MHz (WNS : +1,596 ns, WHS : +0,142 ns).
+* **Ressources :** 12 LUTs / 111 Registres, consommation ~1 mW.
 
 ---
 
-## 🌐 2. Architecture Globale du Framework
+## 📦 3. Structure du Dépôt & Politique d'Accès
 
-Le framework s'articule autour d'un bloc central générique (REIO-CORE) configuré pour stabiliser le silicium et gérer les barrières de métastabilité. Ce cœur fonctionnel alimente et pilote les deux implémentations physiques spécialisées présentées dans ce portfolio :
-- Le module réseau haut débit (REIO-CHAIN)
-- Le module de sûreté automobile (REIO-DRIVE)
+Ce dépôt sert de portfolio technique.
 
----
+### Accès Libre :
+* `reio_chain.h`, `AI_METHODOLOGY.md` et rapports Vivado.
 
-## ⚖️ 3. Mentions Légales & Propriété Intellectuelle (Proprietary Rights)
-
-Conformément aux clauses de protection exclusives de mon modèle de distribution "Closed-Source / Restricted Access", les architectures logiques, l'implémentation algorithmique fine et les fichiers sources d'origine (.vhd, .rs) restent strictement propriétaires et confidentiels. Ces éléments sont protégés contre toute extraction ou exposition publique par des restrictions d'environnement automatisées (.gitignore).
-
-Le public, les auditeurs techniques et les directeurs de l'ingénierie (CTO) disposent d'un droit d'accès libre pour auditer exclusivement les livrables physiques de validation : rapports CAO post-routage d'utilisation des ressources (.rpt), bilans de puissance thermique, chronogrammes de simulation fonctionnelle, ainsi que les interfaces d'en-tête C-FFI standardisées (reio_chain.h).
-
-*Pour toute demande de licence d'exploitation commerciale, d'audit d'architecture approfondi ou d'intégration sur mesure au sein de vos systèmes embarqués, veuillez soumettre une demande officielle via les canaux professionnels de messagerie.*
+### Code Source (`.vhd`, `.rs`) :
+Le code source brut est restreint pour protéger la propriété intellectuelle.
