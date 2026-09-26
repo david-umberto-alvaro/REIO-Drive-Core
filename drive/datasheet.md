@@ -1,9 +1,10 @@
 # REIO-Drive (SPU_105) — Technical Datasheet & Product Brief
 
-## 📋 1. Product Overview & Classifications
-REIO-Drive Core v1.0 is a safety-critical hardware-software guardrail designed to instantly isolate and mitigate malicious frame injections or data corruption on embedded networks.
-* **Functional Safety:** Designed for ISO 26262 ASIL-D and DO-254 compliance (SEooC - Safety Element out of Context).
-* **Testing Coverage:** 100% MC/CD (Modified Condition/Decision Coverage) validated via automated HDL testbenches.
+## ⚡ 1. Product Overview & Classifications
+REIO-Drive (SPU_105) is a compact hardware security monitor core designed as a Proof of Concept (PoC) for low-latency line-level interception on multiplexed automotive/industrial control buses.
+
+*   **Design Philosophy:** Inspired by architectural concepts of functional safety and hardware lockstep mechanisms used in critical embedded environments.
+*   **Testing Coverage:** Validated via synchronic RTL testbenches focusing on clock-cycle deterministic state transitions and fault isolation.
 
 ---
 
