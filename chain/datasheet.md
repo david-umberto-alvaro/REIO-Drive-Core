@@ -6,17 +6,20 @@ REIO-Chain (SPU_103) is an ultra-high-speed synchronous hardware network filter 
 ---
 
 ## 2. Electrical, Timing & Resource Metrics (Artix-7)
-*Certified post-placement-routing metrics under AMD/Xilinx Vivado v2026.1 targeting the xc7a35tcsg324-1 component (Commercial Temperature Grade).*
 
-### Power & Thermal Dissipation Profile:
+*Certified post-placement-routing metrics under AMD/Xilinx Vivado v2026.1 targeting the xc7a12tlcpg238-2L component (Extended Automotive Temperature Grade).*
 
-- **Device Static Power:** 72 mW (Hardware static floor post-routing).
-- **Core Active Dynamic Power (REIO-Core):** < 1 mW (Total design dynamic power including I/Os is validated at 2 mW).
-- **Max Admissible Ambient Temperature ($T_{AMB\_MAX}$):** Validated at **84.6 °C** under standard thermal constraints (ThetaJA = 4.8 C/W, 250 LFM airflow), fully stable for baseline operating conditions.
+- **Core Clock Frequency (Control):** 400.00 MHz (Period: 2.50 ns)
+- **Line Clock Frequency (Data):** 125.00 MHz (Period: 8.00 ns)
+- **Worst Negative Slack (WNS):** **+1.596 ns** (Zéro violation sur le plan de contrôle)
+- **Worst Pulse Width Slack (WPWS):** +0.750 ns
 
-*   **Device Static Power:** 56 mW
-*   **Core Active Dynamic Power:** **1 mW**
-*   **Estimated Junction Temperature:** 25.4 °C
+### Power & Silicon Footprint Profile:
+
+- **Slice LUTs Utilization:** 12 LUTs (0.15% du composant)
+- **Slice Registers Count:** 111 Registers (0.69% du composant)
+- **Device Static Power:** 58 mW
+- **Core Active Dynamic Power (REIO-Core):** 1 mW (Total design dynamic power verified at 2 mW)
 
 ---
 
