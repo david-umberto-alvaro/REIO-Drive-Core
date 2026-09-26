@@ -48,13 +48,11 @@ The core acts as a synchronous hardware firewall blocking frame-level anomalies 
 
 ---
 
-## ⚖️ 5. Commercial B2B Licensing & Pricing Model (Europe / BeNeLux)
+## ⚖️ 5. Intégration Portfolio & Modèle de Consultance Freelance
 
-The SPU_105 core architecture is available under three flexible B2B procurement models:
+L'architecture REIO-Drive (SPU_105) constitue un démonstrateur de sûreté de fonctionnement matériel (PoC gelé) destiné à illustrer la modélisation de machines d'états en logique redondante (Lockstep).
 
-* **Option 1: Software License (Fixed Fee) | €4,500 (One-time payment)**
-  * Includes the compiled standalone Rust library (`.a` / `.lib`), `reio_drive.h` header, and 30 days of integration support.
-* **Option 2: Core Hardware IP Source (Buyout) | €35,000 (Unlimited usage)**
-  * Includes full access to the encrypted proprietary VHDL source code `reio_drive_hardware.vhd`, automated Testbench scripts, and synthesis `.sdc` timing constraint templates.
-* **Option 3: Royalties / Volume Licensing | €150 / Machine / Year**
-  * Distributed deployment option backed by an active automated hardware validation license clock.
+*   **Exploitation Professionnelle :** Ce module sert de base d'évaluation pour démontrer des compétences en prototypage rapide et en architecture de systèmes embarqués sécurisés.
+*   **Modèle de Prestation :** Prestations de services et de co-conception hardware/software facturables au Tarif Journalier Moyen (TJM) via la structure SMART Belgique.
+*   **Contact & NDA :** Les demandes d'analyse architecturale ou d'adaptation de ce bloc de sûreté pour vos prototypes industriels se font sous accord de confidentialité (NDA) via les réseaux professionnels.
+
