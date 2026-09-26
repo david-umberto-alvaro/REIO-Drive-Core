@@ -6,14 +6,13 @@ REIO-Chain (SPU_103) is an ultra-high-speed synchronous hardware network filter 
 ---
 
 ## 2. Electrical, Timing & Resource Metrics (Artix-7)
-*Targeting `xc7a12tlcpg238-2L` via Vivado v2026.1.*
+*Certified post-placement-routing metrics under AMD/Xilinx Vivado v2026.1 targeting the xc7a35tcsg324-1 component (Commercial Temperature Grade).*
 
-| Timing Parameter | Symbol | Target Specification | Validated Slack | Unit |
-| :--- | :--- | :--- | :--- | :--- |
-| **System Clock Frequency** | f_SYS | 400.00 | — | MHz |
-| **Line Clock Frequency (PHY)** | f_RX | 125.00 | — | MHz |
-| **Worst Negative Slack (Setup)** | WNS | — | **+1.596** | ns |
-| **Worst Hold Slack (Hold)** | WHS | — | **+0.142** | ns |
+### Power & Thermal Dissipation Profile:
+
+- **Device Static Power:** 72 mW (Hardware static floor post-routing).
+- **Core Active Dynamic Power (REIO-Core):** < 1 mW (Total design dynamic power including I/Os is validated at 2 mW).
+- **Max Admissible Ambient Temperature ($T_{AMB\_MAX}$):** Validated at **84.6 °C** under standard thermal constraints (ThetaJA = 4.8 C/W, 250 LFM airflow), fully stable for baseline operating conditions.
 
 *   **Device Static Power:** 56 mW
 *   **Core Active Dynamic Power:** **1 mW**
@@ -35,19 +34,21 @@ REIO-Chain (SPU_103) is an ultra-high-speed synchronous hardware network filter 
 
 ## 4. Behavioral Timing Chronogram & Invariant Bounds
 
-```text
-                       ◀ Nominal Processing ▶◀ Surgical Isolation (1 Cycle)
-                       0ns         2.5ns       5.0ns       7.5ns       10ns
+◀------- Nominal Processing -------▶◀---- Surgical Isolation (1 Clock Cycle Latency) ----
+0ns                 5ns                10ns               15ns               20ns
 
-                       |           |           |           |           |
-SYS_CLK (400 MHz)   ___/¯¯¯¯\_____/¯¯¯¯\_____/¯¯¯¯\_____/¯¯¯¯\_____/¯¯¯¯\__
-RESET (Active-High) ¯¯¯¯\__________________________________________________
-FLUX_DATA_IN (64b)  XXXX🔀  0xAA  XXXXXXXXX🔀  0x7F  XXXXXXXXXXXXXXXXXXXXXX
-                                              ▲ (Threat Signature Detected)
-STATUT_SECURITE    ____________/¯¯¯¯¯¯¯¯¯¯¯¯¯¯\___________________________
-                                               ▼ (Immediate Bus Disjunction)
-DECLENCHER_SECOURS ___________________________/¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
-```
+|                   |                  |                  |                  |
+   ______             ______             ______             ______             ______
+__/      \___________/      \___________/      \___________/      \___________/      \_  SYS_CLK (100 MHz)
+____
+    \__________________________________________________________________________________  RESET (Active-High)
+__________ ______________________________________ _____________________________________
+XXXXX_0xAA_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_0x7F_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  CAN_RX_RAW (1 bit)
+                                                      ▲ (Threat Signature Injected)
+_______________________________________________________
+                                                       \_______________________________  FAIL_SAFE_MODE (1->0)
+                                                        ▼ (Triggered on next rising edge)
+
 
 ---
 
@@ -61,3 +62,5 @@ The REIO-Chain (SPU_103) architecture is part of a professional co-design portfo
 
 *   **Consulting & Custom IP Adaptation:** Tailoring to custom networking fabrics, bus boundaries mitigation (CDC), and driver interfacing.
 *   **Engagement Model:** Engineering missions are available under freelance contracts or payroll umbrella structures (**SMART Belgium** / direct enterprise contracts).
+
+> 💡 **Engineering Note:** While the current open-core hardware implementation reports are targeted and verified on a commercial-grade matrix (xc7a35tcsg324-1) for physical footprint validation, the architecture's Dual-Core Lockstep (DCLS) RTL logic is natively prepared for migration to extended automotive temperature grades down to qualification boundaries.
