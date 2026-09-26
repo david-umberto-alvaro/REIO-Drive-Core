@@ -6,8 +6,7 @@ Le framework **REIO** (*Reliable Embedded Interception Operations*) relie métho
 
 ### Fondations Théoriques
 Les mécanismes s'appuient sur la **logique paraconsistante** et les FSM pour garantir un comportement déterministe malgré les fautes (*bit-flips*).
-* **Référence Académique :** Thèse et spécifications sur **Zenodo** : `[Insère ton lien Zenodo ici ou ton vrai DOI]`
-
+* **Référence Académique :** Thèse et spécifications sur **Zenodo** : `[https://zenodo.org/records/20743411]`
 ---
 
 ## 🛠️ 2. Implémentation Physique & Métriques Vivado (PoC)
