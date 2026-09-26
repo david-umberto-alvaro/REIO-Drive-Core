@@ -57,7 +57,6 @@ Engineered to mitigate malicious frame injections, spoofing attacks, and hardwar
 
 ## 📊 5. Behavioral Timing Chronogram & Fault Injection
 
-```text
 ◀--- Nominal Execution ---▶◀---- Lockstep Mismatch & Fail-Safe Isolation ----
 0ns                 10ns                20ns                30ns                40ns
 
