@@ -1,12 +1,6 @@
-# REIO — Framework de Co-Design Hardware/Software pour la Sûreté des Systèmes Embarqués
+REIO — Framework de Co-Design Hardware/Software pour la Sûreté des Systèmes Embarqués
 
-## 🔬 1. Positionnement Scientifique & Recherche Académique
-
-Le framework **REIO** (*Reliable Embedded Interception Operations*) relie méthodes formelles et contraintes physiques (FPGA). 
-
-### Fondations Théoriques
-Les mécanismes s'appuient sur la **logique paraconsistante** et les FSM pour garantir un comportement déterministe malgré les fautes (*bit-flips*).
-* **Référence Académique :** Thèse et spécifications sur **Zenodo** : https://zenodo.org/records/20743411
+🔬 1. Positionnement Scientifique & Sûreté de FonctionnementLe framework REIO (Reliable Embedded Interception Operations) couple modélisation formelle et contraintes physiques de routage (FPGA).Fondations Théoriques & Résilience MatérielleLes mécanismes d'atténuation s'appuient sur la logique multi-valeurs et des architectures FSM durcies pour garantir un confinement contextuel déterministe malgré les fautes physiques (bit-flips).Spécification de Référence : Notice d'architecture et résumé technique sur Zenodo : https://zenodo.org/records/20743411
 ---
 
 ## 🛠️ 2. Implémentation Physique & Métriques Vivado (PoC)
