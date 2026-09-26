@@ -51,12 +51,10 @@ DECLEN_SEC   _____________________/¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ 
 
 ---
 
-## ⚖️ 5. Commercial B2B Licensing & Pricing Model (Europe / BeNeLux)
-The SPU_103 core architecture is available under three flexible B2B procurement models:
+## ⚖️ 5. Intégration Portfolio & Modèle de Consultance Freelance
 
-*   **Option 1: Software License (Fixed Fee) | €4,500 (One-time payment)**
-    *   Includes the compiled standalone RTL binary (`.dcp` / `.edf`), `reio_chain.h` header, and 30 days of integration support.
-*   **Option 2: Core Hardware IP Source (Buyout) | €35,000 (Unlimited usage)**
-    *   Includes full access to the encrypted proprietary VHDL source code `reio_chain.vhd`, automated Testbench scripts, and synthesis `.sdc` timing constraint templates.
-*   **Option 3: Royalties / Volume Licensing | €150 / Machine / Year**
-    *   Distributed deployment option backed by an automated hardware validation license clock.
+L'architecture REIO-Chain (SPU_103) est présentée exclusivement en tant que Proof of Concept (PoC) technologique pour démontrer des compétences en co-design et en fermeture de contraintes temporelles strictes sous AMD/Xilinx Vivado.
+
+*   **Exploitation Professionnelle :** Le code source sous-jacent et les scripts d'automatisation associés sont transférables et intégrables dans vos infrastructures matérielles dans le cadre de missions de consultance en ingénierie.
+*   **Modèle de Prestation :** Interventions techniques disponibles au Tarif Journalier Moyen (TJM) standard du marché via des contrats de portage salarial (SMART Belgique) ou contrats de prestation directs.
+*   **Audit approfondi :** Pour toute demande d'intégration sur mesure, d'analyse de métastabilité ou d'extension d'architecture, veuillez me contacter directement via mes canaux professionnels associés.
