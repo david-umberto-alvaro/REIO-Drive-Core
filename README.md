@@ -70,3 +70,9 @@ Ce dépôt sert de portfolio technique pour démontrer mes compétences en co-de
 
 Ce framework est distribué sous un modèle Open-Core strict. Pour consulter l'accord d'audit public et les restrictions de rétro-ingénierie, veuillez vous référer au fichier [LICENSE.md](./LICENSE.md).
 
+---
+
+💼 **Besoin d'intégrer REIO sur vos puces Artix-7 ?** 
+Pour toute demande d'évaluation du code source complet, d'extension d'architecture ou de consultation, l'accès peut être accordé après signature d'un Accord de Confidentialité (NDA). Veuillez soumettre une demande officielle via mes canaux professionnels associés.
+
+
