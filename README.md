@@ -14,12 +14,12 @@ Les mécanismes s'appuient sur la **logique paraconsistante** et les FSM pour ga
 
 Deux Proof of Concepts (PoC) en **VHDL** et **Rust/C FFI** ont été synthétisés sur cible **AMD/Xilinx Artix-7**.
 
-### 🚗 REIO-Drive (SPU_105)
+### 🚗 [REIO-Drive (SPU_105)](./drive)
 * **Fonction :** Bouclier pour bus CAN/LIN.
 * **Sûreté (ISO 26262) :** Aligné ASIL-D (Lockstep, mode *Fail-Safe*).
 * **Validation :** Validé à 100 MHz (WNS : +7,606 ns, WHS : +0,279 ns). Interception en 1 cycle.
 
-### ⛓ REIO-Chain (SPU_103)
+### ⛓️ [REIO-Chain (SPU_103)](./chain)
 * **Fonction :** Disjoncteur matériel sur bus 64 bits.
 * **Validation :** Cible à 400 MHz (WNS : +1,596 ns, WHS : +0,142 ns).
 * **Ressources :** 12 LUTs / 111 Registres, consommation ~1 mW.
