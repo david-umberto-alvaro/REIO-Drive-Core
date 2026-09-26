@@ -1,4 +1,4 @@
-# Copyright & Propriété Intellectuelle — REIO Framework
+# ⚖️ Copyright & Propriété Intellectuelle — REIO Framework
 
 Copyright (c) 2026 David Umberto Alvaro. Tous droits réservés.
 
