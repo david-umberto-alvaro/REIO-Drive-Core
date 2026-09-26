@@ -1,49 +1,31 @@
-# AI-Assisted Engineering Methodology
+# 🤖 Méthodologie d'Ingénierie Assistée par IA — REIO Core Framework
 
-## Cadre d'Orchestration Matérielle/Logicielle (Vivado & Rust Bare-Metal)
+## Cadre d'Orchestration Matérielle & Logicielle
+Ce document formalise la méthodologie d'ingénierie système assistée par IA utilisée pour concevoir, optimiser et durcir le framework REIO. L'IA a été exploitée ici comme un copilote de conception avancée pour accélérer la recherche, l'optimisation logique et le débogage physique. Ce processus itératif est mené sous la supervision stricte de critères de validation et de contraintes industrielles.
+------------------------------
+## 1. Cycle d'Itération & Convergence Technologique
+La conception des différents modules du framework suit un flux de convergence systématique en boucle fermée entre les instructions de l'ingénieur et les rapports physiques générés par les outils de CAO :
 
-Ce document formalise la méthodologie d'ingénierie système assistée par IA utilisée pour concevoir, optimiser et durcir le framework REIO-chain (SPU_103). L'IA a été exploitée ici comme un copilote de CAO avancée pour accélérer la recherche et le débogage physique, sous la supervision stricte de critères de validation industriels.
+   1. Spécifications architecturales globales et écriture du code HDL de bas niveau.
+   2. Synthèse et placement-routage physique sur la cible matérielle.
+   3. Analyse automatique des fichiers de contraintes et des rapports d'erreurs.
+   4. Soumission des fichiers de logs à l'IA avec des consignes d'optimisation ciblées.
+   5. Correction et ré-injection du code épuré pour validation physique.
 
----
+------------------------------
+## 2. Résolution des Contraintes Physiques et Gestion des Horloges
+L'apport majeur de l'IA s'est concentré sur la stabilisation du comportement temporel global et la gestion des barrières physiques du silicium.
 
-### 1. Cycle d'Itération & Convergence Technologique
+* Pipelining et Structures Logiques : Pour éviter que les cascades de calculs combinatoires logiques ne saturent le chemin critique, l'IA a guidé l'implémentation de structures de pipeline matériel. L'insertion stratégique de registres tampons segmente les opérations et stabilise les signaux.
+* Domaines d'Horloges Multiples (CDC) : Le couplage entre des horloges asynchrones (flux réseau, bus système ou périphériques) présente des risques de métastabilité. L'IA a aidé à isoler et sécuriser ces barrières de transition à l'aide de registres de resynchronisation matériels et de contraintes de faux chemins appropriées.
 
-La conception du cœur d'interception a suivi un flux de convergence itératif rigoureux entre les invites (prompts) et les rapports physiques générés par AMD/Xilinx Vivado.
+------------------------------
+## 3. Optimisation de l'Empreinte Logique
+Pour garantir une latence minimale et une compacité matérielle maximale, le framework sépare strictement le traitement lourd et le contrôle :
 
-Le flux suit une boucle fermée systématique :
-1. Spécifications architecturales et écriture du code VHDL.
-2. Synthèse et Placement-Routage physique sous Vivado.
-3. Analyse automatique des fichiers de violations (`.rpt`).
-4. Soumission des logs à l'IA avec une invite d'optimisation ciblée.
-5. Correction et ré-injection du code épuré.
+* Simplification au niveau Silicium : Élimination de l'arithmétique complexe et déportation de l'évaluation logique vers le plan de contrôle logiciel bare-metal.
+* Fusion Logique (LUT Combining) : Les outils de synthèse peuvent ainsi optimiser la géométrie du circuit en fusionnant la logique de contrôle élémentaire au sein d'un nombre minimal de cellules élémentaires matérielles, réduisant la consommation d'énergie au repos et en activité.
 
-Chaque bloc de code généré a été confronté à la réalité micro-architecturale de la cible Artix-7 (`xc7a12tlcpg238-2L`).
-
----
-
-### 2. Résolution des Contraintes Physiques de Timing (Haute Fréquence)
-
-L'apport majeur de l'ingénierie assistée par IA s'est concentré sur la fermeture complète du timing sous une période d'horloge agressive de l'ordre du gigahertz.
-
-#### A. Élimination des violations de Setup (WNS)
-* **Problème initial :** Les cascades de calculs combinatoires logiques pour l'évaluation des masques réseau saturaient le chemin critique (Critical Path), entraînant un Worst Negative Slack (WNS) rouge et négatif.
-* **Correction IA/Humain :** Implémentation guidée d'une structure de pipeline logique. L'insertion de registres tampons a permis de segmenter les opérations combinatoires.
-* **Résultat :** Convergence finale validée au routage avec un WNS positif et stable (zéro violation sur le chemin critique).
-
-#### B. Gestion du Cross-Clock Domain (CDC) & Métastabilité
-* **Problème initial :** Le couplage asynchrone entre l'horloge réseau Ethernet de ligne (125 MHz) et l'horloge système du plan de contrôle rapide présentait des risques critiques de métastabilité.
-* **Correction IA/Humain :** Génération et isolation stricte de barrières de resynchronisation à l'aide de l'attribut matériel `ASYNC_REG` en VHDL, combinée à l'écriture de contraintes temporelles spécifiques (`set_clock_groups -asynchronous`) dans le fichier XDC.
-
----
-
-### 3. Optimisation de l'Empreinte (LUT Combining)
-
-Pour garantir une latence déterministe d'un seul cycle machine, l'IA a été configurée pour cibler une compacité logicielle maximale :
-* **Optimisation sémantique :** Élimination de l'arithmétique flottante et des calculs de ratios complexes au niveau du silicium. Déportation de l'évaluation logique vers le plan de contrôle Rust bare-metal (`#[no_std]`).
-* **Résultat CAO :** Le moteur de synthèse Vivado a pu exploiter pleinement la micro-architecture des tranches (Slices) Xilinx en fusionnant la logique de contrôle et la propagation arithmétique (primitives CARRY4) au sein d'un nombre minimal de Slice LUTs hybrides, réduisant ainsi la puissance dynamique active à son niveau le plus bas.
-
----
-
-### 4. Conclusion & Posture d'Ingénierie Augmentée
-
-Cette approche démontre l'efficacité du paradigme de l'Ingénieur Augmenté : considérait que l'Intelligence Artificielle gère la vitesse de production et la structure brute du code, tandis que l'opérateur humain valide la physique du routage, applique les contraintes de délai matérielles (`set_input_delay`) et certifie les chronogrammes de simulation comportementale.
+------------------------------
+## 4. Posture d'Ingénierie Augmentée
+Cette approche met en avant le paradigme de l'Ingénieur Augmenté. L'Intelligence Artificielle gère la vitesse de production, la génération des structures de code brutes et le premier niveau d'analyse des erreurs. L'opérateur humain intervient pour valider la physique du routage, appliquer les contraintes d'interfaçage réelles et certifier la conformité des simulations architecturales.
