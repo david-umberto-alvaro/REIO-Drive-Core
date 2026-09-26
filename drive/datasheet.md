@@ -1,9 +1,9 @@
 # REIO-Drive (SPU_105) — Technical Datasheet & Product Brief
 
 ## ⚡ 1. Product Overview & Classifications
-REIO-Drive (SPU_105) is a compact hardware security monitor core designed as a Proof of Concept (PoC) for low-latency line-level interception on multiplexed automotive/industrial control buses.
+REIO-Drive (SPU_105) is a compact hardware security monitor core designed as a Proof of Concept (PoC) for low-latency line-level interception on multiplexed automotive and industrial control buses.
 
-*   **Design Philosophy:** Inspired by architectural concepts of functional safety and hardware lockstep mechanisms used in critical embedded environments.
+*   **Design Philosophy:** Conçu selon les principes d'architecture de sûreté de fonctionnement (Functional Safety) inspirés des exigences ISO 26262 / ASIL-D, mettant en œuvre une machine d'états (FSM) redondante en logique Lockstep.
 *   **Testing Coverage:** Validated via synchronic RTL testbenches focusing on clock-cycle deterministic state transitions and fault isolation.
 
 ---
