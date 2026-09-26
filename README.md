@@ -1,66 +1,37 @@
-# REIO — Framework de Co-Design Hardware/Software pour Systèmes Critiques
+# REIO — Portfolio de Prototypage Hardware & Co-Design
 
-Bienvenue sur le dépôt principal du framework **REIO** (Reliable Embedded Interception Operations). Cet écosystème regroupe des architectures de co-design matériel/logiciel (RTL VHDL + Rust Bare-Metal `#[no_std]` / C FFI) dédiées à la sûreté de fonctionnement, à l'interception de flux haute vitesse et à l'immunité déterministe des infrastructures embarquées.
-
-## 📑 1. Fondations Théoriques & Antériorité Scientifique
-
-Les concepts abstraits, invariants métalogiques et les règles de confinement paraconsistant qui gouvernent cet écosystème ont été officiellement archivés et gelés au niveau de la recherche académique :
-- **Spécification Fondamentale :** REIO-RFC-003 (Spécification d'Architecture Méta-Logique)
-- **Publication Officielle :** Archivée de manière permanente sur [Zenodo (CERN)](https://zenodo.org/records/20743411).
-- **Certification d'Antériorité :** Adossée au DOI unique et immuable `10.5281/zenodo.20743411`.
-
+Bienvenue sur mon portfolio technique. Ce dépôt rassemble mes maquettes fonctionnelles, mes architectures de co-design et mes rapports de validation physique post-routage sous AMD/Xilinx Vivado (VHDL + Rust Bare-Metal #[no_std] / C FFI).
 
 ---
 
-## 🛠️ 2. Réalisations Matérielles & Validations Physiques (Open-Core Portfolio)
+## 🛠️ 1. Réalisations Matérielles & Validations Physiques (PoC Portfolio)
 
-Pour répondre aux contraintes micro-architecturales réelles du silicium et garantir le respect strict des contraintes temporelles sans aucune violation, les spécifications théoriques ont été adaptées sous forme de modules matériels compacts et autonomes, entièrement synthétisés et routés sur cible **AMD/Xilinx Artix-7** (Mode *Out-of-Context*).
+Toutes les architectures présentées ont été entièrement synthétisées, placées et routées sur cible matérielle AMD/Xilinx Artix-7 (Mode Out-of-Context) :
 
-Le framework est actuellement structuré autour de deux Proof of Concepts (PoC) industriels majeurs :
+### 🚗 REIO-Drive (SPU_105)
+- **Fonction :** Maquette d'un intercepteur et bouclier de sécurité pour bus multiplexés automobiles CAN/LIN.
+- **Sûreté :** Architecture intégrant une machine d'états redondante en mode Lockstep avec bascule en mode dégradé sécurisé (Fail-Safe).
+- **Validation Temporelle :** Routage physique entièrement validé à 100 MHz (Worst Negative Slack : +7,606 ns, Worst Hold Slack : +0,279 ns). Interception exécutée en exactement 1 cycle d'horloge.
 
-### 🚗 [REIO-Drive (SPU_105)](./drive)
-*   **Fonction :** Intercepteur déterministe et bouclier anti-injection pour bus multiplexés automobiles CAN/LIN.
-*   **Sûreté (ISO 26262) :** Architecture alignée sur les exigences critiques **ASIL-D** via une machine d'états redondante en mode **Lockstep** et bascule automatique en mode dégradé sécurisé (*Fail-Safe*).
-*   **Livrable Temporel :** Atténuation chirurgicale et isolation physique de la ligne de transmission exécutée en **exactement 1 cycle d'horloge unitaire** après détection du motif de menace.
-*   
-### ⛓️ [REIO-Chain (SPU_103)](./chain)
-*   **Fonction :** Disjoncteur matériel et filtre d'interception réseau synchrone sur bus parallèle **64 bits**.
-*   **Métriques Vivado :** Cadencement du plan de contrôle à **400 MHz** (période de 2,5 ns) et de la ligne à 125 MHz. Timing Closure entièrement validé post-routage (**WNS : +1,596 ns**, **WHS : +0,142 ns**).
-*   **Empreinte :** Optimisation extrême combinatoire pure (12 LUTs / 111 Registres), consommation dynamique de seulement **1 mW**.
+### ⛓️ REIO-Chain (SPU_103)
+- **Fonction :** Maquette d'un disjoncteur matériel et filtre d'interception réseau synchrone sur bus parallèle 64 bits.
+- **Validation Temporelle :** Cadencement cible stabilisé à 400 MHz (période de 2,5 ns). Timing Closure entièrement validé post-routage (WNS : +1,596 ns, WHS : +0,142 ns).
+- **Ressources :** Optimisation extrême combinatoire pure (12 LUTs / 111 Registres) pour une consommation dynamique active du cœur isolée à 1 mW.
 
 ---
 
-### 🌐 Architecture Globale du Framework
+## 🌐 2. Architecture Globale du Framework
 
-```text
-                     [ REIO FRAMEWORK ]
-                             |
-                             v
-     +-----------------------------------------------+
+Le framework s'articule autour d'un bloc central générique (REIO-CORE) configuré pour stabiliser le silicium et gérer les barrières de métastabilité. Ce cœur fonctionnel alimente et pilote les deux implémentations physiques spécialisées présentées dans ce portfolio :
+- Le module réseau haut débit (REIO-CHAIN)
+- Le module de sûreté automobile (REIO-DRIVE)
 
-     |                   REIO-CORE                   |
-     |      (Spécification Théorique Initiale)       |
-     |   -> Archivé sur Zenodo avec son DOI unique   |
-     +-----------------------------------------------+
-                             |
-         +-------------------+-------------------+
-
-         |                                       |
-         v                                       v
-+------------------------+              +------------------------+
-
-|       REIO-CHAIN       |              |       REIO-DRIVE       |
-|  (PoC Réseau - Impl.)  |              |   (PoC Auto - Impl.)   |
-|  -> Pipeline 64 bits   |              |  -> Mode Lockstep      |
-|  -> Cadencement 400 MHz|              |  -> Norme ISO 26262    |
-+------------------------+              +------------------------+
-```
-
+---
 
 ## ⚖️ 3. Mentions Légales & Propriété Intellectuelle (Proprietary Rights)
 
-Conformément aux clauses de protection exclusive de notre modèle de distribution "Closed-Source / Restricted Access", les architectures logiques, l'implémentation algorithmique fine et les fichiers sources d'origine (`.vhd`, `.rs`) restent strictement propriétaires et confidentiels. Ces éléments sont protégés contre toute extraction, modification ou exposition publique par des restrictions d'environnement automatisées (`.gitignore`).
+Conformément aux clauses de protection exclusives de mon modèle de distribution "Closed-Source / Restricted Access", les architectures logiques, l'implémentation algorithmique fine et les fichiers sources d'origine (.vhd, .rs) restent strictement propriétaires et confidentiels. Ces éléments sont protégés contre toute extraction ou exposition publique par des restrictions d'environnement automatisées (.gitignore).
 
-Le public, les auditeurs techniques et les directeurs de l'ingénierie (CTO) disposent d'un droit d'accès libre pour auditer exclusivement les livrables physiques de validation : rapports CAO post-routage d'utilisation des ressources (`.rpt`), bilans de puissance thermique, chronogrammes de simulation fonctionnelle, ainsi que les interfaces d'en-tête C-FFI standardisées (`reio_chain.h` / `reio_drive.h`).
+Le public, les auditeurs techniques et les directeurs de l'ingénierie (CTO) disposent d'un droit d'accès libre pour auditer exclusivement les livrables physiques de validation : rapports CAO post-routage d'utilisation des ressources (.rpt), bilans de puissance thermique, chronogrammes de simulation fonctionnelle, ainsi que les interfaces d'en-tête C-FFI standardisées (reio_chain.h).
 
-*Pour toute demande de licence d'exploitation commerciale (Option logicielle bilingue ou rachat complet des droits de Propriété Intellectuelle source), d'audit d'architecture approfondi ou d'intégration sur mesure au sein de vos systèmes embarqués, veuillez soumettre une demande officielle auprès de l'architecte matériel via les canaux professionnels de messagerie.*
+*Pour toute demande de licence d'exploitation commerciale, d'audit d'architecture approfondi ou d'intégration sur mesure au sein de vos systèmes embarqués, veuillez soumettre une demande officielle via les canaux professionnels de messagerie.*
