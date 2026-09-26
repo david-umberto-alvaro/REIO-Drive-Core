@@ -1,16 +1,22 @@
-# ⚖️ REIO Framework — Conditions d'Utilisation & Notice de Propriété Intellectuelle
+# Copyright & Propriété Intellectuelle — REIO Framework
 
-Ce dépôt rassemble les rapports de certification matérielle, les métriques d'implémentation physique et les fichiers de validation fonctionnelle pour le REIO-Chain (SPU_103) et le REIO-Drive (SPU_105).
+Copyright (c) 2026 David Umberto Alvaro. Tous droits réservés.
 
-Les fichiers sources de conception d'origine (.vhd, .rs, .c) sont strictement propriétaires et protégés contre toute extraction ou exposition publique accidentelle par des restrictions d'environnement automatisées (.gitignore).
+## 1. Propriété Exclusive
+L'intégralité du contenu de ce dépôt (incluant, sans s'y limiter, les rapports d'architecture, les fichiers d'interface, les documents textuels et les métriques physiques) est la propriété exclusive de son auteur. 
 
-## 🌐 1. Accès Public au Portfolio & Audit Technique
+Les fichiers sources de conception originaux (extensions `.vhd`, `.rs`, `.c`) sont protégés par le droit d'auteur et restent strictement confidentiels et propriétaires.
 
-- **Utilisation Autorisée :** Vous êtes expressément autorisé à analyser les rapports d'utilisation des ressources, les bilans de puissance thermique (.rpt), les résumés des contraintes de timing et les chronogrammes de simulation fonctionnelle. Cet accès est fourni exclusivement pour vérifier la viabilité physique de mes maquettes et de mes flux de co-design.
-- **Interdictions Strictes :** Aucun droit n'est accordé pour copier, copier-coller, reproduire, faire de la rétro-ingénierie, approximer ou émuler commercialement les structures logiques et algorithmiques présentées dans ces documents de validation. Tous les fichiers sous-jacents restent protégés par le droit d'auteur exclusif de l'architecte matériel.
+## 2. Licence de Consultation Étroite (Audit Public)
+Par la présente, toute personne accédant à ce dépôt public est autorisée à :
+* Consulter et analyser visuellement les rapports d'utilisation des ressources et de timing (.rpt).
+* Examiner les fichiers d'en-tête d'interface (.h) à des fins de vérification de compétences ou d'évaluation technique.
 
-## 🔬 2. Objectif du Démonstrateur (Engineering Showcase)
+## 3. Restrictions Strictes
+Sauf autorisation écrite préalable et explicite de l'auteur, il est strictement interdit de :
+* Copier, reproduire, redistribuer ou concéder sous licence tout ou partie des livrables de ce dépôt.
+* Effectuer de la rétro-ingénierie, de l'émulation fonctionnelle ou de l'extraction logique basée sur les rapports de validation fournis.
+* Utiliser les concepts, l'architecture ou le nom "REIO Framework" à des fins commerciales.
 
-L'architecture de ce framework est présentée strictement sous forme de Proof of Concept (PoC) et de portfolio technique. Elle vise à démontrer des compétences avancées en ingénierie des systèmes embarqués : maîtrise des outils de CAO (AMD/Xilinx Vivado), fermeture des contraintes de timing à haute fréquence (jusqu'à 400 MHz), co-design matériel/logiciel (VHDL + Rust bare-metal) et intégration de contraintes de sûreté.
-
-- **Demandes Professionnelles :** Pour toute demande d'intégration sur mesure, d'évaluation d'architecture de sécurité, ou pour des collaborations en consultance de prototypage rapide, veuillez contacter directement l'architecte matériel via les canaux professionnels de messagerie.
+## 4. Demandes de Licence & Intégration
+Pour toute demande d'accès au code source complet sous accord de confidentialité (NDA), d'évaluation de l'architecture de sécurité ou de collaboration en ingénierie, veuillez soumettre une demande officielle via les canaux professionnels associés.
