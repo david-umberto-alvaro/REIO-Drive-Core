@@ -66,6 +66,7 @@ Ce dépôt sert de portfolio technique pour démontrer mes compétences en co-de
 *   **Interfaces de Liaison :** Fichiers d'en-tête standardisés (`.h`) pour l'intégration logicielle.
 *   **Rapports de Synthèse :** Journaux physiques Vivado (`.rpt`) certifiant l'utilisation des ressources logiques, de puissance et le timing post-routage.
 
-### Code Source Restreint (Closed-Source) :
-* ⚖️ Conformément aux clauses de propriété intellectuelle et de confidentialité, les fichiers de code source de conception originaux (`.vhd`, `.rs`) restent strictement confidentiels et propriétaires afin de protéger le savoir-faire de mes architectures.
+## ⚖ Licence & Propriété Intellectuelle
+
+Ce framework est distribué sous un modèle Open-Core strict. Pour consulter l'accord d'audit public et les restrictions de rétro-ingénierie, veuillez vous référer au fichier [LICENSE.md](./LICENSE.md).
 
