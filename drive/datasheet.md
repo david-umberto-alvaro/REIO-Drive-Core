@@ -43,9 +43,11 @@ The core acts as a synchronous hardware firewall blocking frame-level anomalies 
 
 ---
 
-## 💻 4. Software Control Plane (Rust Bare-Metal / C Bridge)
-* **Execution:** Zero dynamic allocation (`#[no_std]`, no heap), mathematical overflow protection against buffer overflows.
-* **Host Interfacing:** Integrated via the bilingual C-FFI header `reio_drive.h`. Requires only 5 lines of code within the client host's main execution loop.
+## ⚙️ 4. Software Control Plane & Memory-Mapped Interface (MMIO)
+S'agissant d'un cœur logique de filtrage combinatoire pur (Stream IP Core), le circuit ne dispose pas de décodeur d'adresse interne ni de registres de configuration configurables en écriture. 
+
+*   **Host Interfacing (MMIO) :** Les lignes de sortie matérielles `statut_securite` et `declencher_secours` sont connectées directement aux registres d'E/S (GPIO) cartographiés en mémoire du processeur hôte.
+*   **Rust Control Plane :** Le pilote écrit en Rust bare-metal (`#![no_std]`) effectue des lectures asynchrones et déterministes de ces broches d'état en mémoire physique (Volatile MMIO Reads). Cela permet au logiciel de sécurité de lever instantanément une exception ou d'activer le mode dégradé (Fail-Safe) du véhicule dès que le matériel applique la disjonction.
 
 ---
 
