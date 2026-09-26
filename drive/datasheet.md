@@ -58,17 +58,20 @@ Engineered to mitigate malicious frame injections, spoofing attacks, and hardwar
 ## 📊 5. Behavioral Timing Chronogram & Fault Injection
 
 ```text
-                       ◀  Nominal Execution  ▶◀ Lockstep Mismatch & Fail-Safe Isolation
-                       0ns         10ns        20ns        30ns        40ns
+◀--- Nominal Execution ---▶◀---- Lockstep Mismatch & Fail-Safe Isolation ----
+0ns                 10ns                20ns                30ns                40ns
 
-                       |           |           |           |           |
-SYS_CLK (100 MHz)   ___/¯¯¯¯\_____/¯¯¯¯\_____/¯¯¯¯\_____/¯¯¯¯\_____/¯¯¯¯\__
-CAN_RX_RAW          ¯¯¯¯\__________/¯¯¯¯¯¯¯¯¯¯\____________________________
-LOCKSTEP_ERR        ___________________________/¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
-                                               ▲ (Hardware mismatch detected between mirror cores)
-FAIL_SAFE_MODE      ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\___________________________
-                                               ▼ (Instantaneous physical bus isolation)
-```
+|                   |                   |                   |                   |
+   ______              ______              ______              ______              ______
+__/      \____________/      \____________/      \____________/      \____________/      \_  SYS_CLK (100 MHz)
+__________ ___________ ___________________________ _____________________________________
+XXXXXXXXXX_Nominal_FFF_XXXXXXXXXXXXXXXXXXXXXXXXXXX_Faulty_7FF_XXXXXXXXXXXXXXXXXXXXXXXXXX  CAN_RX_RAW (1 bit)
+                                                ▲ (Fault injected during cycle)
+_________________________________________________________________
+                                                                 \______________________  FAIL_SAFE_MODE (1->0)
+                                                                  ▼ (Isolated at next rising edge)
+_________________________________________________________________
+                                                                 /¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯  LOCKSTEP_ERR (0->1)
 
 ---
 
