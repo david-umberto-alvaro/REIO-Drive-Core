@@ -49,7 +49,7 @@ Les rapports d'implémentation post-placement-routage sur puce Xilinx Artix-7 (x
 
 ### 📊 Validation Fonctionnelle & Formes d'Ondes (Testbench RTL)
 
-![Chronogramme des formes d'ondes REIO-Chain](tb_spu_103_l3_chain_core_behav.wcfg.png)
+![Chronogramme des formes d'ondes REIO-Chain](reio_chain_simulation_waveform.png)
 
 ### 📊 Empreinte Géométrique & Signature Thermique
 
