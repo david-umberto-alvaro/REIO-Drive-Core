@@ -1,16 +1,27 @@
-REIO — Framework de Co-Design Hardware/Software pour la Sûreté des Systèmes Embarqués
+# REIO — Framework de Co-Design Hardware/Software pour la Sûreté des Systèmes Embarqués
 
-🔬 1. Positionnement Scientifique & Sûreté de FonctionnementLe framework REIO (Reliable Embedded Interception Operations) couple modélisation formelle et contraintes physiques de routage (FPGA).Fondations Théoriques & Résilience MatérielleLes mécanismes d'atténuation s'appuient sur la logique multi-valeurs et des architectures FSM durcies pour garantir un confinement contextuel déterministe malgré les fautes physiques (bit-flips).Spécification de Référence : Notice d'architecture et résumé technique sur Zenodo : https://zenodo.org/records/20743411
+## 🔬 1. Positionnement Scientifique & Sûreté de Fonctionnement
+
+Le framework **REIO** (*Reliable Embedded Interception Operations*) couple modélisation formelle et contraintes physiques de routage (FPGA).
+
+### Fondations Théoriques & Résilience Matérielle
+
+Les mécanismes d'atténuation s'appuient sur la **logique multi-valeurs** et des architectures FSM durcies pour garantir un confinement contextuel déterministe malgré les fautes physiques (*bit-flips*).
+
+* **Spécification de Référence :** Notice d'architecture et résumé technique sur **Zenodo** : [https://zenodo.org/records/20743411](https://zenodo.org/records/20743411)
+
 ---
 
-## 🛠️ 2. Implémentation Physique & Métriques Vivado (PoC)
+## 🛠 2. Implémentation Physique & Métriques Vivado (PoC)
 
 Deux Proof of Concepts (PoC) en **VHDL** et **Rust/C FFI** ont été synthétisés sur cible **AMD/Xilinx Artix-7**.
 
 ### 🚗 [REIO-Drive (SPU_105)](./drive)
+
 * **Fonction :** Bouclier pour bus CAN/LIN.
 * **Sûreté (ISO 26262) :** Aligné ASIL-D (Lockstep, mode *Fail-Safe*).
 * **Validation :** Validé à 100 MHz (WNS : +7,606 ns, WHS : +0,279 ns). Interception en 1 cycle.
+
 
 ### ⛓️ [REIO-Chain (SPU_103)](./chain)
 * **Fonction :** Disjoncteur matériel sur bus 64 bits.
