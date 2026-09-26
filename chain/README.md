@@ -49,7 +49,7 @@ Les rapports d'implémentation post-placement-routage sur puce Xilinx Artix-7 (x
 
 ### 📊 Validation Fonctionnelle & Formes d'Ondes (Testbench RTL)
 
-![Chronogramme des formes d'ondes REIO-Chain](reio_chain_simulation_waveform.png)
+![Chronogramme des formes d'ondes REIO-Chain](tb_spu_103_l3_chain_core_behav.wcfg.png)
 
 ### 📊 Empreinte Géométrique & Signature Thermique
 
@@ -62,7 +62,7 @@ Les rapports d'implémentation post-placement-routage sur puce Xilinx Artix-7 (x
 ### 🛠 Architecture du Framework Unifié
 
 1. **RTL Core (VHDL) :** Pipeline d'interception directe parallèle s'interfaçant avec un bus physique Ethernet. Intègre un bloc de protection contre les inversions d'états, un disjoncteur matériel à verrouillage et une matrice de Télémétrie Multi-Secteurs synchrone.
-2. **Control Plane (Rust 2024) :** Pilote autonome s'exécutant sous contraintes strictes `![no_std]`, effectuant des lectures directes et volatiles par mappage mémoire MMIO, calculant les ratios de corruption en arithmétique entière fixe.
+2. **Control Plane (Rust 2024) :** Pilote autonome s'exécutant sous contraintes strictes `#![no_std]`, effectuant des lectures directes et volatiles par mappage mémoire MMIO, calculant les ratios de corruption en arithmétique entière fixe.
 3. **Host Interface (C-FFI) :** Exportation des bindings via un en-tête C (`reio_chain.h`) exploitant des structures unifiées et alignées à 32 octets sur les lignes de cache CPU.
 
 *⚖️ Conformément aux clauses de propriété intellectuelle et de confidentialité, les fichiers de code source (.vhd, .rs) restent strictement confidentiels. Les rapports physiques d'utilisation CAO (.rpt), les résumés des contraintes de timing et les chronogrammes de simulation comportementale sont accessibles en Open-Core.*
