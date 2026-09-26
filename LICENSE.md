@@ -1,20 +1,16 @@
-# ⚖️ REIO — Terms of Use & Intellectual Property Notice
+# ⚖️ REIO Framework — Conditions d'Utilisation & Notice de Propriété Intellectuelle
 
-This repository houses the public technical certification, structural hardware reports, and mathematical validation files for the **REIO-CHAIN (SPU_103)** Intellectual Property (IP) Core.
+Ce dépôt rassemble les rapports de certification matérielle, les métriques d'implémentation physique et les fichiers de validation fonctionnelle pour le REIO-Chain (SPU_103) et le REIO-Drive (SPU_105).
 
-Source layouts (.vhd, .rs) are strictly proprietary and protected against exposure or modification by automated environment restrictions (.gitignore).
+Les fichiers sources de conception d'origine (.vhd, .rs, .c) sont strictement propriétaires et protégés contre toute extraction ou exposition publique accidentelle par des restrictions d'environnement automatisées (.gitignore).
 
----
+## 🌐 1. Accès Public au Portfolio & Audit Technique
 
-## 🌐 1. Public Portfolio Access & Academic Review
+- **Utilisation Autorisée :** Vous êtes expressément autorisé à analyser les rapports d'utilisation des ressources, les bilans de puissance thermique (.rpt), les résumés des contraintes de timing et les chronogrammes de simulation fonctionnelle. Cet accès est fourni exclusivement pour vérifier la viabilité physique de mes maquettes et de mes flux de co-design.
+- **Interdictions Strictes :** Aucun droit n'est accordé pour copier, copier-coller, reproduire, faire de la rétro-ingénierie, approximer ou émuler commercialement les structures logiques et algorithmiques présentées dans ces documents de validation. Tous les fichiers sous-jacents restent protégés par le droit d'auteur exclusif de l'architecte matériel.
 
-*   **Permitted Use:** You are authorized to review the certified clock utilization reports (`.rpt`), power metrics, timing summaries, and structural RTL schemas exclusively for verification of the underlying deterministic Layer 3 network filtering core and co-design implementation.
-*   **Prohibitions:** No rights are granted to copy, reverse-engineer, approximate, reconstruct, or commercially emulate the logical matrices showcased in these structural reports. All layout files and underlying source codes remain fully protected under proprietary rights.
+## 🔬 2. Objectif du Démonstrateur (Engineering Showcase)
 
----
+L'architecture de ce framework est présentée strictement sous forme de Proof of Concept (PoC) et de portfolio technique. Elle vise à démontrer des compétences avancées en ingénierie des systèmes embarqués : maîtrise des outils de CAO (AMD/Xilinx Vivado), fermeture des contraintes de timing à haute fréquence (jusqu'à 400 MHz), co-design matériel/logiciel (VHDL + Rust bare-metal) et intégration de contraintes de sûreté.
 
-## 🔬 2. Engineering Showcase
-
-The SPU_103 core architecture is showcased strictly as a production-grade **Proof of Concept (PoC)** demonstrating advanced expertise in hardware-software co-design (VHDL + bare-metal Rust), timing closure optimization at 400 MHz, and hardware reliability constraints (TMR, ASYNC_REG).
-
-*   **Technical Inquiries:** For professional technical inquiries, technical architectural audits, or system integration evaluations, please contact the hardware architect directly via corporate messaging channels.
+- **Demandes Professionnelles :** Pour toute demande d'intégration sur mesure, d'évaluation d'architecture de sécurité, ou pour des collaborations en consultance de prototypage rapide, veuillez contacter directement l'architecte matériel via les canaux professionnels de messagerie.
