@@ -8,12 +8,12 @@ Bienvenue sur mon portfolio technique. Ce dépôt rassemble mes maquettes foncti
 
 Toutes les architectures présentées ont été entièrement synthétisées, placées et routées sur cible matérielle AMD/Xilinx Artix-7 (Mode Out-of-Context) :
 
-### 🚗 REIO-Drive (SPU_105)
+### 🚗 [REIO-Drive (SPU_105)](./drive)
 - **Fonction :** Maquette d'un intercepteur et bouclier de sécurité pour bus multiplexés automobiles CAN/LIN.
 - **Sûreté :** Architecture intégrant une machine d'états redondante en mode Lockstep avec bascule en mode dégradé sécurisé (Fail-Safe).
 - **Validation Temporelle :** Routage physique entièrement validé à 100 MHz (Worst Negative Slack : +7,606 ns, Worst Hold Slack : +0,279 ns). Interception exécutée en exactement 1 cycle d'horloge.
 
-### ⛓️ REIO-Chain (SPU_103)
+### ⛓️ [REIO-Chain (SPU_103)](./chain)
 - **Fonction :** Maquette d'un disjoncteur matériel et filtre d'interception réseau synchrone sur bus parallèle 64 bits.
 - **Validation Temporelle :** Cadencement cible stabilisé à 400 MHz (période de 2,5 ns). Timing Closure entièrement validé post-routage (WNS : +1,596 ns, WHS : +0,142 ns).
 - **Ressources :** Optimisation extrême combinatoire pure (12 LUTs / 111 Registres) pour une consommation dynamique active du cœur isolée à 1 mW.
