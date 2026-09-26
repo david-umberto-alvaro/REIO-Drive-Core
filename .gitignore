@@ -29,8 +29,6 @@ Thumbs.db
 *.v
 *.sv
 *.rs
-Cargo.lock
-target/
 
 # Block Vivado interface local files
 *.xpr
