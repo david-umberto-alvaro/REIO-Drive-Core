@@ -54,15 +54,6 @@ DECLENCHER_SECOURS ___________________________/¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯�
 ## 5. Software Control Plane Integration (Rust no_std)
 The IP Core exposes a standard C-FFI boundary through `reio_chain.h`. The bare-metal driver guarantees execution with memory safety and zero dynamic allocation.
 
-```rust
-// Example of bare-metal volatile initialization for REIO control register
-pub unsafe fn initialize_reio_chain(base_address: usize) {
-    let ctrl_ptr = base_address as *mut u32;
-    // Direct volatile write to activate synchronous monitoring
-    core::ptr::write_volatile(ctrl_ptr, 0x01);
-}
-```
-
 ---
 
 ## 6. Commercial Integration & Portfolio Framework
