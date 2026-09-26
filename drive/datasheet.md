@@ -13,7 +13,7 @@ Engineered to mitigate malicious frame injections, spoofing attacks, and hardwar
 ---
 
 ## 2. Electrical, Timing & Thermal Metrics (Artix-7)
-*Certified post-placement-routing metrics under AMD/Xilinx Vivado v2026.1 targeting the xc7a12tlcpg238-2L component (Extended Automotive Temperature Grade).*
+*Certified post-placement-routing metrics under AMD/Xilinx Vivado v2026.1 targeting the xc7a35tcsg324-1 component (Commercial Temperature Grade).*
 
 | Timing Parameter | Symbol | Target Specification | Validated Slack | Unit |
 | :--- | :--- | :--- | :--- | :--- |
@@ -24,9 +24,9 @@ Engineered to mitigate malicious frame injections, spoofing attacks, and hardwar
 | **Lockstep Detection Latency**| \(T_{LOCK}\) | **10.00 (Single cycle)**| Compliant | ns |
 
 ### Power & Thermal Dissipation Profile:
-*   **Device Static Power (Vccint, Vccaux):** 56 mW (Hardware static floor).
-*   **Core Active Dynamic Power (REIO-Core):** **< 1 mW**.
-*   **Max Admissible Ambient Temperature (\(T_{AMB\_MAX}\)):** Validated at **99.6 °C** under standard thermal constraints, fully compliant with engine bay and automotive electronic control unit (ECU) environments.
+- **Device Static Power (Vccint, Vccaux):** 72 mW (Hardware static floor).
+- **Core Active Dynamic Power (REIO-Core):** < 1 mW.
+- **Max Admissible Ambient Temperature ($T_{AMB\_MAX}$):** Validated at **84.6 °C** under standard thermal constraints (ThetaJA = 4.8 C/W, 250 LFM airflow).
 
 ---
 
