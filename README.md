@@ -54,9 +54,13 @@ Deux Proof of Concepts (PoC) en **VHDL** et **Rust/C FFI** ont été synthétis�
 
 ## 📦 3. Structure du Dépôt & Politique d'Accès
 
-Ce dépôt sert de portfolio technique.
+Ce dépôt sert de portfolio technique pour démontrer mes compétences en co-design et en intégration matérielle.
 
-### Accès Libre :
-* `reio_chain.h`, `AI_METHODOLOGY.md` et rapports Vivado.
+### Accès Libre (Modèle Open-Core) :
+*   **Documentation & Méthodologie :** Fichiers textuels d'analyse (`.md`).
+*   **Interfaces de Liaison :** Fichiers d'en-tête standardisés (`.h`) pour l'intégration logicielle.
+*   **Rapports de Synthèse :** Journaux physiques Vivado (`.rpt`) certifiant l'utilisation des ressources logiques, de puissance et le timing post-routage.
 
-*⚖️ Conformément aux clauses de propriété intellectuelle et de confidentialité, les fichiers de code source (.vhd, .rs) restent strictement confidentiels. Les rapports physiques d'utilisation CAO (.rpt), les résumés des contraintes de timing et les chronogrammes de simulation comportementale sont accessibles en Open-Core.*
+### Code Source Restreint (Closed-Source) :
+* ⚖️ Conformément aux clauses de propriété intellectuelle et de confidentialité, les fichiers de code source de conception originaux (`.vhd`, `.rs`) restent strictement confidentiels et propriétaires afin de protéger le savoir-faire de mes architectures.
+
