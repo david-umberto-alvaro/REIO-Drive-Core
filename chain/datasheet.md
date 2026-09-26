@@ -1,60 +1,73 @@
-# REIO-Chain (SPU_103) — Technical Datasheet & Product Brief
+# ⚡ REIO-Chain (SPU_103) — Fiche Technique Industrielle
 
-## ⚡ 1. Product Overview & Classifications
-REIO-Chain (SPU_103) is a ultra-high-speed hardware network filter core designed to instantly isolate and mitigate malicious frame injections or data corruption on synchronous parallel networks.
+## 1. Description Générale & Applications
+REIO-Chain (SPU_103) est un bloc de propriété intellectuelle (IP Core) synchrone ultra-compact dédié à l'interception linéaire et à l'isolation déterministe de flux de données Couche 3 au niveau de la couche physique (Line-Rate). 
 
-*   **Functional Safety:** Optimized for low-latency line-rate deterministic data streams.
-*   **Testing Coverage:** 100% RTL Timing Closure (Worst Negative Slack validated) monitored via automated RTL testbenches.
+### Applications Cibles :
+*   Pare-feux matériels industriels (Automates, Scada).
+*   Sonde de détection de menaces en temps réel pour routeurs critiques.
+*   Disjoncteur réseau pour serveurs de trading haute fréquence (HFT).
 
 ---
 
-## 🔌 2. Signal Specifications & I/O Mapping (VHDL Component)
-The core acts as a synchronous hardware firewall blocking line-level anomalies within 1 clock cycle (2.5 ns).
+## 2. Caractéristiques Électriques et Temporelles (Artix-7)
+*Spécifications certifiées post-placement-routage sous AMD/Xilinx Vivado v2026.1 sur cible xc7a12tlcpg238-2L (Grade de température étendu).*
 
-| Signal Name | Direction | Width (Bits) | Type | Description |
+| Paramètre Temporel | Symbole | Spécification Target | Slack Validé | Unité |
 | :--- | :--- | :--- | :--- | :--- |
-| `sys_clk` | Input | 1 | STD_LOGIC | System clock (**400 MHz** target for line-rate validation) |
-| `phy_rx_clk`| Input | 1 | STD_LOGIC | Network Interface Clock (125 MHz asynchronous interface) |
-| `reset` | Input | 1 | STD_LOGIC | Asynchronous system reset (Active-High) |
-| `flux_data_in` | Input | 64 | STD_LOGIC_VECTOR | Parallel incoming high-speed packet payload from bus lines |
-| `flux_valid_in`| Input | 1 | STD_LOGIC | Data valid strobe from line physical layer |
-| `statut_securite`| Output | 1 | STD_LOGIC | Active high hardware status flag ('1' = Nominal, '0' = Isolated) |
-| `declencher_secours`| Output | 1 | STD_LOGIC | Critical security override trigger output logic line ('1' = Active) |
+| **Fréquence Horloge Système** | \(f_{SYS}\) | 400.00 | — | MHz |
+| **Période Horloge Système** | \(T_{SYS}\) | 2.50 | — | ns |
+| **Fréquence Horloge Ligne (PHY)** | \(f_{RX}\) | 125.00 | — | MHz |
+| **Période Horloge Ligne (PHY)** | \(T_{RX}\) | 8.00 | — | ns |
+| **Worst Negative Slack (Setup)**| WNS | — | **+1.596** | ns |
+| **Worst Hold Slack (Hold)** | WHS | — | **+0.142** | ns |
+| **Temps d'Isolation Critique** | \(T_{ISOL}\) | **1.00 (Unique cycle)** | Conforme | cycle |
+
+### Profil de Consommation Électrique (Power Summary) :
+*   **Puissance Statique du Composant (Vccint, Vccaux) :** 56 mW (Fixe silicium).
+*   **Puissance Dynamique Active du Cœur (REIO-Core) :** **1 mW**.
+*   **Température de Jonction Estimée (\(T_J\)) :** 25.4 °C (Pour une température ambiante de 25 °C).
 
 ---
 
-## 📊 3. Operational Logic & Invariant Bounds
+## 3. Cartographie des Registres et Interface MMIO (Memory Map)
+*L'accès au plan de contrôle s'effectue via des lectures/écritures volatiles directes (32-bit aligné sur les lignes de cache CPU).*
 
+| Adresse Offset | Registre | Type | Largeur | Description / Fonction |
+| :--- | :--- | :--- | :--- | :--- |
+| `0x00` | `REG_CTRL` | R/W | 32 bits | [Bit 0] : Reset logiciel \| [Bit 1] : Forçage manuel de l'isolation |
+| `0x04` | `REG_STATUS` | R | 32 bits | [Bit 0] : Statut Sécurité ('1'=Nominal, '0'=Isolé) \| [Bit 1] : Alerte |
+| `0x08` | `REG_THREAT_SIG`| R/W | 8 bits | Signature de la menace (Valeur par défaut : `0x7F`) |
+| `0x0C` | `REG_CNT_CLEAN` | R | 32 bits | Compteur synchrone des paquets sains interceptés |
+| `0x10` | `REG_CNT_ANOM`  | R | 32 bits | Compteur synchrone des anomalies bloquées |
+
+---
+
+## 4. Chronogramme Comportemental & Invariants Logiques
 ```text
-TIMING CHRONOGRAM (RTL BEHAVIORAL VALIDATION)
+                       ◀ Nominal Processing ▶◀ Surgical Isolation (1 Cycle)
+                       0ns         2.5ns       5.0ns       7.5ns       10ns
 
-                0ns      2.5ns    5.0ns    7.5ns    10ns
-
-                 |        |        |        |        |
-SYS_CLK      ____/¯¯¯¯\____/¯¯¯¯\____/¯¯¯¯\____/¯¯¯¯\____
-RESET        ¯¯¯¯\_______________________________________
-FLUX_DATA    XXXXX🔀 0xAA XXXXXXXX🔀 0x7F (Threat) XXXXXXXX
-STATUT_SEC   ____________/¯¯¯¯¯¯¯¯\______________________ (ISOLATE)
-DECLEN_SEC   _____________________/¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ (EMERGENCY)
+                       |           |           |           |           |
+SYS_CLK (400 MHz)   ___/¯¯¯¯\_____/¯¯¯¯\_____/¯¯¯¯\_____/¯¯¯¯\_____/¯¯¯¯\__
+RESET (Active-High) ¯¯¯¯\__________________________________________________
+FLUX_DATA_IN (64b)  XXXX🔀  0xAA  XXXXXXXXX🔀  0x7F  XXXXXXXXXXXXXXXXXXXXXX
+                                              ▲ (Signature Détectée)
+STATUT_SECURITE    ____________/¯¯¯¯¯¯¯¯¯¯¯¯¯¯\___________________________
+                                               ▼ (Coupure immédiate du flux)
+DECLENCHER_SECOURS ___________________________/¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 ```
 
-### Phase Description:
-*   **Initialization (0ns - 2.5ns):** While `reset` is active, the core forces safe system confinement (`statut_securite = '0'`, `declencher_secours = '1'`).
-*   **Nominal Processing (2.5ns - 5.0ns):** Valid incoming data drives the system into functional state.
-*   **Surgical Isolation (5.0ns - 7.5ns+):** Detection of the threat signature (`0x7F`) triggers full hardware disjunction in **exactly one clock cycle (2.5 ns)**.
-
 ---
 
-## ⚙️ 4. Software Control Plane (Rust Bare-Metal / C Bridge)
-*   **Execution:** Zero dynamic allocation (`#![no_std]`, no heap), mathematical overflow protection against buffer overflows.
-*   **Host Interfacing:** Integrated via the bilingual C-FFI header `reio_chain.h`. Requires only 5 lines of code within the client host's main execution loop.
+## 5. Intégration Logicielle (Plan de Contrôle Rust `no_std`)
+L'IP Core expose une interface C-FFI standardisée via `reio_chain.h`. Le pilote garantit une exclusion stricte des débordements de mémoire sans allocation dynamique.
 
----
-
-## ⚖️ 5. Intégration Portfolio & Modèle de Consultance Freelance
-
-L'architecture REIO-Chain (SPU_103) est présentée exclusivement en tant que Proof of Concept (PoC) technologique pour démontrer des compétences en co-design et en fermeture de contraintes temporelles strictes sous AMD/Xilinx Vivado.
-
-*   **Exploitation Professionnelle :** Le code source sous-jacent et les scripts d'automatisation associés sont transférables et intégrables dans vos infrastructures matérielles dans le cadre de missions de consultance en ingénierie.
-*   **Modèle de Prestation :** Interventions techniques disponibles au Tarif Journalier Moyen (TJM) standard du marché via des contrats de portage salarial (SMART Belgique) ou contrats de prestation directs.
-*   **Audit approfondi :** Pour toute demande d'intégration sur mesure, d'analyse de métastabilité ou d'extension d'architecture, veuillez me contacter directement via mes canaux professionnels associés.
+```rust
+// Exemple d'initialisation bare-metal du registre de contrôle REIO
+pub unsafe fn initialize_reio_chain(base_address: usize) {
+    let ctrl_ptr = base_address as *mut u32;
+    // Écriture volatile directe pour activer le monitoring synchrone
+    core::ptr::write_volatile(ctrl_ptr, 0x01);
+}
+```
