@@ -57,20 +57,24 @@ Engineered to mitigate malicious frame injections, spoofing attacks, and hardwar
 
 ## 📊 5. Behavioral Timing Chronogram & Fault Injection
 
+```text
 ◀--- Nominal Execution ---▶◀---- Lockstep Mismatch & Fail-Safe Isolation ----
 0ns                 10ns                20ns                30ns                40ns
 
 |                   |                   |                   |                   |
    ______              ______              ______              ______              ______
 __/      \____________/      \____________/      \____________/      \____________/      \_  SYS_CLK (100 MHz)
-__________ ___________ ___________________________ _____________________________________
+
 XXXXXXXXXX_Nominal_FFF_XXXXXXXXXXXXXXXXXXXXXXXXXXX_Faulty_7FF_XXXXXXXXXXXXXXXXXXXXXXXXXX  CAN_RX_RAW (1 bit)
                                                 ▲ (Fault injected during cycle)
+
 _________________________________________________________________
                                                                  \______________________  FAIL_SAFE_MODE (1->0)
                                                                   ▼ (Isolated at next rising edge)
+
 _________________________________________________________________
-                                                                 /¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯  LOCKSTEP_ERR (0->1)
+                                                                 /----------------------  LOCKSTEP_ERR (0->1)
+```
 
 ---
 
