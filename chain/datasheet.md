@@ -37,21 +37,20 @@ REIO-Chain (SPU_103) is an ultra-high-speed synchronous hardware network filter 
 
 ## 4. Behavioral Timing Chronogram & Invariant Bounds
 
-◀------- Nominal Processing -------▶◀---- Surgical Isolation (1 Clock Cycle Latency) ----
-0ns                 5ns                10ns               15ns               20ns
+◀------- Nominal Line Processing -------▶◀---- Surgical Masking (1 Control Cycle Latency) ----
+0ns                 2.5ns               5.0ns              7.5ns              10.0ns
 
-|                   |                  |                  |                  |
-   ______             ______             ______             ______             ______
-__/      \___________/      \___________/      \___________/      \___________/      \_  SYS_CLK (100 MHz)
+|                   |                   |                  |                  |
+   ______              ______              ______             ______             ______
+__/      \____________/      \____________/      \___________/      \___________/      \_  SYS_CLK (400 MHz)
 ____
     \__________________________________________________________________________________  RESET (Active-High)
-__________ ______________________________________ _____________________________________
-XXXXX_0xAA_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_0x7F_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  CAN_RX_RAW (1 bit)
-                                                      ▲ (Threat Signature Injected)
-_______________________________________________________
-                                                       \_______________________________  FAIL_SAFE_MODE (1->0)
-                                                        ▼ (Triggered on next rising edge)
-
+____________________ __________________________________________________________________
+XXXXX  0xAA (Valid)  XXXXX                       0x7F (Threat)  XXXXXXXXXXXXXXXXXXXXXXX  AXIS_TDATA (8b/64b)
+                                                        ▲ (Signature Detected)
+________________________________________________________
+                                                        \______________________________  REG_STATUS [Bit 0] (1->0)
+                                                         ▼ (Line Masked on Next Edge)
 
 ---
 
